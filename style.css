@@ -15,7 +15,8 @@
 }
 .vis1div
 {
-
+    width: 1000px;
+    height: 700px;
 }
 .vis2div
 {
@@ -24,4 +25,9 @@
 h1
 {
 
+}
+svg
+{
+    width: 100%;
+    height: 600px;
 }

@@ -37,17 +37,31 @@ function barChartDraw()
     //     .attr("cy", 50)
     //     .attr("r", 50)
 
-    console.log(data1)
+    // make color scale
+    const scaleSoldCopies = d3.scaleOrdinal()
+        .domain(["Mario", "Turismo", "Speed"])
+        .range(["red", "green", "blue"])
+
+    // make x axis scale
+
+    // make y axis scale
+
+    console.log(data1[0])
     svg1.selectAll("bars")
-        .data(data1)
+        .data(data1[0])
         .join(
             enter => enter.append("rect")
                 .attr("x", 10)
                 .attr("y", 10)
                 .attr("width", 10)
                 .attr("height", 50)
-                .attr("fill", "black"),
-            update => update,
+                .attr("fill", "black")
+                .transition(),
+            update => update
+                .style("opacity", .4)
+                .transition()
+                .duration(300)
+                .attr("fill", function(d) { return blueColor(d.color)}),
             exit => exit
         )
 
