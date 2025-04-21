@@ -41,7 +41,7 @@ Note: or just add them anywhere
 /* Intro Div Styles */
 .introTitle
 {
-    text-align: center;
+    
 }
 .introParagraph
 {
@@ -101,6 +101,8 @@ Note: or just add them anywhere
 h1, h2, h3, h4{
     font-family: "Poetsen One", sans-serif;
     font-weight: 100;
+
+    text-align: center;
 }
 
 .standardParagraph {
