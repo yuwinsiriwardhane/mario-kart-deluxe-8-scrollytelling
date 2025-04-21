@@ -1,0 +1,114 @@
+/* 
+Formated in this order
+1. Div styles (flex box grid layouts)
+2. Introduction div
+3. History styles for that section
+4. MarioKart game section styles
+5. Competetive Anaysis section styles
+6. Extra styles (images etc.)
+
+Note: or just add them anywhere
+*/
+
+/* Title Div Styles */
+.titleDiv
+{
+    position: relative;
+    display: grid;
+    align-items: center;
+    vertical-align: middle;
+}
+.introDiv
+{
+    margin-top: 260px;
+    display: grid;
+    align-items: center;
+    vertical-align: middle;
+}
+.historyDiv
+{
+
+}
+.marioKartDiv
+{
+
+}
+.competetiveDiv
+{
+
+}
+
+/* Intro Div Styles */
+.introTitle
+{
+    text-align: center;
+}
+.introParagraph
+{
+    text-align: justify;
+    margin-left: 240px;
+    margin-right: 240px;
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* Title Div Styles */
+.topTitle
+{
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+
+    text-align: center;
+}
+.authorsList
+{
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 24px;
+
+    text-align: center;
+}
+
+/* History Div Styles */
+
+/* Game Div Styles */
+
+/* Competetive Div Styles */
+
+/* Other Styles */
+.img1
+{
+    position: absolute;
+    width: 240px;
+    height: auto;
+    top: 140px;
+    left: 0px;
+}
+.img2
+{
+    position: absolute;
+    width: 240px;
+    height: auto;
+    top: 140px;
+    right: 0px;
+}
+
+h1, h2, h3, h4{
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 100;
+}
+
+.standardParagraph {
+    text-align: justify;
+    margin-left: 240px;
+    margin-right: 240px;
+
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
