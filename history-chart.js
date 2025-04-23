@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         width_scatterplot = 580 - margin_scatterplot.left - margin_scatterplot.right,
         height_scatterplot = 400 - margin_scatterplot.top - margin_scatterplot.bottom;
 
-    const svg_scatterplot = d3.select("#div_scatterplot")
+    const svg_scatterplot = d3.select("#svg_scatterplot")
     .append("svg")
         .attr("width", width_scatterplot + margin_scatterplot.left + margin_scatterplot.right)
         .attr("height", height_scatterplot + margin_scatterplot.top + margin_scatterplot.bottom)
