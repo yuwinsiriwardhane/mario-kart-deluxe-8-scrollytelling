@@ -11,16 +11,25 @@ var svg = d3.select("#svg_sankey").append("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var color = d3.scaleOrdinal(d3.schemeCategory10);
-                            // (["Light", "Medium", "Heavy", "Customizable",
-                            //  "Mushroom Kingdom", "Koopalings", "Animal Crossing", "Splatoon", "Spooky Characters", "Mii",
-                            //  "Baby Mario", "Baby Luigi", "Baby Peach", "Toad", "Baby Daisy", "Toadette",
-                            //  "Baby Rosalina", "Koopa Troopa" , "Shy Guy", "Lakitu", "Bowser Jr.", "Lemmy",
-                            //  "Dry Bones", "Larry", "Wendy", "Isabelle", "Mario", "Luigi", "Peach", "Daisy",
-                            //  "Yoshi", "Tanooki Mario", "Iggy", "Cat Peach", "Lugwig", "Inkling (Boy)", "Inkling (Girl)",
-                            //  "Bowser", "Donkey Kong", "Wario", "Waluigi", "Rosalina", "Metal Mario", "Pink Gold Peach", "King Boo",
-                            //  "Dry Bowser", "Roy", "Morton", "Link", "Mii"],
-                            //  ["red", "green", "blue"]);
+var color = d3.scaleOrdinal
+                            //(d3.schemeCategory10);
+
+                            (["Light", "Medium", "Heavy", "Customizable",
+                             "Baby Characters","Mushroom Kingdom", "Koopalings", "Animal Crossing", "Splatoon", "Spooky Characters", "Mii",
+                             "Baby Mario", "Baby Luigi", "Baby Peach", "Toad", "Baby Daisy", "Toadette",
+                             "Baby Rosalina", "Koopa Troopa" , "Shy Guy", "Lakitu", "Bowser Jr.", "Lemmy",
+                             "Dry Bones", "Larry", "Wendy", "Isabelle", "Mario", "Luigi", "Peach", "Daisy",
+                             "Yoshi", "Tanooki Mario", "Iggy", "Cat Peach", "Lugwig", "Villager (Boy)", "Villager (Girl)",
+                             "Bowser", "Donkey Kong", "Wario", "Waluigi", "Rosalina", "Metal Mario", "Pink Gold Peach", "King Boo",
+                             "Dry Bowser", "Roy", "Morton", "Link", "Mii", "Inkling Girl", "Inkling Boy"],
+                             ["#ADD8E6", "#0000CD", "#000098", "#000060",
+                              "#89CFF0", "#90EE90", "#FFFF00", "red", "purple", "orange", "grey",
+                              "#e03038", "#41a732", "#fec6f3",  "#F4260F", "#ffe833", "#FF69B4",
+                              "#6EADBF", "#55da66", "#E10B11", "#00bfff", "#cfce37", "#ff69b4",
+                              "#e6d8b5", "#87Ceeb", "#ffa7d1", "#ffd700", "red", "green", "#fec6f3", "#f86a2e",
+                              "#68d154", "#ae6c37", "#A2FF6B", "#ffa8c2", "#9370db", "#00Ff7f", "#ff69b4",
+                              "#32765c", "#b34200", "#fecb4c", "#9D4CEC", "#89e0d5", "#A0A0A0", "#Ffb6c1",
+                              "#555555", "#ff4500", "#8b4513",  "#bed163", "#5cc1e6", "#f02d7d", "#19d719"]);
 
 var sankey = d3.sankey()
     .nodeWidth(36)
