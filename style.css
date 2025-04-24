@@ -33,6 +33,12 @@ Note: or just add them anywhere
 {
 
 }
+/* Item distribution styles */
+#itemDistribution{
+    margin: auto;
+    width: 1520px;    
+}
+
 .competetiveDiv
 {
 
