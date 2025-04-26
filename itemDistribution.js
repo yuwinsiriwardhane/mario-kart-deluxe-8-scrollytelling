@@ -46,14 +46,14 @@ const extraPadding   = 60;
 
 //this is how big the pie chart is plus additional padding
 const baseSize = 800;
-const width    = baseSize + 100;
-const height   = baseSize + 100;
-const radius   = baseSize/2 - iconSize*outerFactor - extraPadding;
+const idWidth    = baseSize + 100;
+const idHeight   = baseSize + 100;
+const idRadius   = baseSize/2 - iconSize*outerFactor - extraPadding;
 
 const svg = d3.select("#visualization")
   .append("svg")
-    .attr("width",  width)
-    .attr("height", height)
+    .attr("width",  idWidth)
+    .attr("height", idHeight)
     .style("display","block")
     .style("margin","auto");
 
@@ -75,7 +75,7 @@ feMerge.append("feMergeNode").attr("in","offsetBlur");
 feMerge.append("feMergeNode").attr("in","SourceGraphic");
 
 const g = svg.append("g")
-  .attr("transform", `translate(${width/2},${height/2})`)
+  .attr("transform", `translate(${idWidth/2},${idHeight/2})`)
   .attr("filter","url(#drop-shadow)");
 
   //special colors I chose for each item
@@ -133,7 +133,7 @@ const infoPanel = row.append("div")
   .attr("id","infoPanel")
   .style("flex","0 0 200px")
   .style("margin-left","20px")
-  .style("height", `${height}px`)
+  .style("height", `${idHeight}px`)
   .style("overflow","auto")
   .style("display","flex")
   .style("align-items","center")
@@ -229,7 +229,7 @@ Promise.all(
     const data = nested.get(pl).get(dist);
     const pie  = d3.pie().value(d=>d.percentage).sort(null);
     const arcs = pie(data);
-    const arcG = d3.arc().innerRadius(0).outerRadius(radius);
+    const arcG = d3.arc().innerRadius(0).outerRadius(idRadius);
 
     // slices
     const paths = g.selectAll("path").data(arcs, d=>d.data.item);
