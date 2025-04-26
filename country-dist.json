@@ -1,0 +1,582 @@
+[
+    {
+        "season": 13,
+        "total_players": 14800,
+        "average_mmr": 3509,
+        "median_mmr": 2802,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 8181,
+                "percentage": "55.28%"
+            },
+            {
+                "country": "United States",
+                "population": 1929,
+                "percentage": "13.03%"
+            },
+            {
+                "country": "France",
+                "population": 1115,
+                "percentage": "7.53%"
+            },
+            {
+                "country": "Germany",
+                "population": 675,
+                "percentage": "4.56%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 472,
+                "percentage": "3.19%"
+            },
+            {
+                "country": "Spain",
+                "population": 383,
+                "percentage": "2.59%"
+            },
+            {
+                "country": "Canada",
+                "population": 324,
+                "percentage": "2.19%"
+            },
+            {
+                "country": "Mexico",
+                "population": 248,
+                "percentage": "1.68%"
+            },
+            {
+                "country": "Australia",
+                "population": 162,
+                "percentage": "1.09%"
+            },
+            {
+                "country": "Other",
+                "population": 1311,
+                "percentage": "8.86%"
+            }
+        ]
+    },
+    {
+        "season": 12,
+        "total_players": 15103,
+        "average_mmr": 3755,
+        "median_mmr": 3056,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 8546,
+                "percentage": "56.58%"
+            },
+            {
+                "country": "United States",
+                "population": 1909,
+                "percentage": "12.64%"
+            },
+            {
+                "country": "France",
+                "population": 1151,
+                "percentage": "7.62%"
+            },
+            {
+                "country": "Germany",
+                "population": 640,
+                "percentage": "4.24%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 413,
+                "percentage": "2.73%"
+            },
+            {
+                "country": "Spain",
+                "population": 367,
+                "percentage": "2.43%"
+            },
+            {
+                "country": "Canada",
+                "population": 339,
+                "percentage": "2.24%"
+            },
+            {
+                "country": "Mexico",
+                "population": 276,
+                "percentage": "1.83%"
+            },
+            {
+                "country": "Australia",
+                "population": 159,
+                "percentage": "1.05%"
+            },
+            {
+                "country": "Other",
+                "population": 1303,
+                "percentage": "8.63%"
+            }
+        ]
+    },
+    {
+        "season": 11,
+        "total_players": 15945,
+        "average_mmr": 3907,
+        "median_mmr": 3322,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 10120,
+                "percentage": "63.47%"
+            },
+            {
+                "country": "United States",
+                "population": 1675,
+                "percentage": "10.5%"
+            },
+            {
+                "country": "France",
+                "population": 1135,
+                "percentage": "7.12%"
+            },
+            {
+                "country": "Spain",
+                "population": 381,
+                "percentage": "2.39%"
+            },
+            {
+                "country": "Germany",
+                "population": 381,
+                "percentage": "2.39%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 366,
+                "percentage": "2.3%"
+            },
+            {
+                "country": "Canada",
+                "population": 292,
+                "percentage": "1.83%"
+            },
+            {
+                "country": "Mexico",
+                "population": 262,
+                "percentage": "1.64%"
+            },
+            {
+                "country": "Netherlands",
+                "population": 117,
+                "percentage": "0.73%"
+            },
+            {
+                "country": "Other",
+                "population": 1216,
+                "percentage": "7.63%"
+            }
+        ]
+    },
+    {
+        "season": 10,
+        "total_players": 15809,
+        "average_mmr": 4034,
+        "median_mmr": 3478,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 10154,
+                "percentage": "64.23%"
+            },
+            {
+                "country": "United States",
+                "population": 1526,
+                "percentage": "9.65%"
+            },
+            {
+                "country": "France",
+                "population": 1128,
+                "percentage": "7.14%"
+            },
+            {
+                "country": "Spain",
+                "population": 396,
+                "percentage": "2.5%"
+            },
+            {
+                "country": "Germany",
+                "population": 367,
+                "percentage": "2.32%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 353,
+                "percentage": "2.23%"
+            },
+            {
+                "country": "Canada",
+                "population": 282,
+                "percentage": "1.78%"
+            },
+            {
+                "country": "Mexico",
+                "population": 253,
+                "percentage": "1.6%"
+            },
+            {
+                "country": "Australia",
+                "population": 119,
+                "percentage": "0.75%"
+            },
+            {
+                "country": "Other",
+                "population": 1231,
+                "percentage": "7.79%"
+            }
+        ]
+    },
+    {
+        "season": 9,
+        "total_players": 17850,
+        "average_mmr": 4032,
+        "median_mmr": 3455,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 11230,
+                "percentage": "62.91%"
+            },
+            {
+                "country": "United States",
+                "population": 1700,
+                "percentage": "9.52%"
+            },
+            {
+                "country": "France",
+                "population": 1354,
+                "percentage": "7.59%"
+            },
+            {
+                "country": "Spain",
+                "population": 593,
+                "percentage": "3.32%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 433,
+                "percentage": "2.43%"
+            },
+            {
+                "country": "Germany",
+                "population": 396,
+                "percentage": "2.22%"
+            },
+            {
+                "country": "Canada",
+                "population": 334,
+                "percentage": "1.87%"
+            },
+            {
+                "country": "Mexico",
+                "population": 267,
+                "percentage": "1.5%"
+            },
+            {
+                "country": "Netherlands",
+                "population": 125,
+                "percentage": "0.7%"
+            },
+            {
+                "country": "Other",
+                "population": 1418,
+                "percentage": "7.94%"
+            }
+        ]
+    },
+    {
+        "season": 8,
+        "total_players": 17348,
+        "average_mmr": 4408,
+        "median_mmr": 3990,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 11738,
+                "percentage": "67.66%"
+            },
+            {
+                "country": "France",
+                "population": 1391,
+                "percentage": "8.02%"
+            },
+            {
+                "country": "United States",
+                "population": 1147,
+                "percentage": "6.61%"
+            },
+            {
+                "country": "Spain",
+                "population": 511,
+                "percentage": "2.95%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 313,
+                "percentage": "1.8%"
+            },
+            {
+                "country": "Germany",
+                "population": 307,
+                "percentage": "1.77%"
+            },
+            {
+                "country": "Mexico",
+                "population": 262,
+                "percentage": "1.51%"
+            },
+            {
+                "country": "Canada",
+                "population": 216,
+                "percentage": "1.25%"
+            },
+            {
+                "country": "Netherlands",
+                "population": 105,
+                "percentage": "0.61%"
+            },
+            {
+                "country": "Other",
+                "population": 1358,
+                "percentage": "7.83%"
+            }
+        ]
+    },
+    {
+        "season": 7,
+        "total_players": 12644,
+        "average_mmr": 3629,
+        "median_mmr": 3150,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 9214,
+                "percentage": "72.87%"
+            },
+            {
+                "country": "France",
+                "population": 775,
+                "percentage": "6.13%"
+            },
+            {
+                "country": "United States",
+                "population": 544,
+                "percentage": "4.3%"
+            },
+            {
+                "country": "Spain",
+                "population": 326,
+                "percentage": "2.58%"
+            },
+            {
+                "country": "Mexico",
+                "population": 209,
+                "percentage": "1.65%"
+            },
+            {
+                "country": "Germany",
+                "population": 193,
+                "percentage": "1.53%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 155,
+                "percentage": "1.23%"
+            },
+            {
+                "country": "Canada",
+                "population": 109,
+                "percentage": "0.86%"
+            },
+            {
+                "country": "Chile",
+                "population": 63,
+                "percentage": "0.5%"
+            },
+            {
+                "country": "Other",
+                "population": 1056,
+                "percentage": "8.35%"
+            }
+        ]
+    },
+    {
+        "season": 6,
+        "total_players": 12153,
+        "average_mmr": 3893,
+        "median_mmr": 3495,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 8448,
+                "percentage": "69.51%"
+            },
+            {
+                "country": "France",
+                "population": 799,
+                "percentage": "6.57%"
+            },
+            {
+                "country": "United States",
+                "population": 543,
+                "percentage": "4.47%"
+            },
+            {
+                "country": "Spain",
+                "population": 312,
+                "percentage": "2.57%"
+            },
+            {
+                "country": "Germany",
+                "population": 232,
+                "percentage": "1.91%"
+            },
+            {
+                "country": "Mexico",
+                "population": 229,
+                "percentage": "1.88%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 154,
+                "percentage": "1.27%"
+            },
+            {
+                "country": "Canada",
+                "population": 108,
+                "percentage": "0.89%"
+            },
+            {
+                "country": "Chile",
+                "population": 74,
+                "percentage": "0.61%"
+            },
+            {
+                "country": "Other",
+                "population": 1254,
+                "percentage": "10.32%"
+            }
+        ]
+    },
+    {
+        "season": 5,
+        "total_players": 9660,
+        "average_mmr": 3546,
+        "median_mmr": 3122,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 5982,
+                "percentage": "61.93%"
+            },
+            {
+                "country": "France",
+                "population": 685,
+                "percentage": "7.09%"
+            },
+            {
+                "country": "United States",
+                "population": 543,
+                "percentage": "5.62%"
+            },
+            {
+                "country": "Spain",
+                "population": 279,
+                "percentage": "2.89%"
+            },
+            {
+                "country": "Mexico",
+                "population": 216,
+                "percentage": "2.24%"
+            },
+            {
+                "country": "Germany",
+                "population": 210,
+                "percentage": "2.17%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 148,
+                "percentage": "1.53%"
+            },
+            {
+                "country": "Canada",
+                "population": 93,
+                "percentage": "0.96%"
+            },
+            {
+                "country": "Italy",
+                "population": 68,
+                "percentage": "0.7%"
+            },
+            {
+                "country": "Other",
+                "population": 1436,
+                "percentage": "14.87%"
+            }
+        ]
+    },
+    {
+        "season": 4,
+        "total_players": 7437,
+        "average_mmr": 4054,
+        "median_mmr": 3761,
+        "data": [
+            {
+                "country": "Japan",
+                "population": 4243,
+                "percentage": "57.05%"
+            },
+            {
+                "country": "France",
+                "population": 641,
+                "percentage": "8.62%"
+            },
+            {
+                "country": "United States",
+                "population": 512,
+                "percentage": "6.88%"
+            },
+            {
+                "country": "Spain",
+                "population": 309,
+                "percentage": "4.15%"
+            },
+            {
+                "country": "Mexico",
+                "population": 187,
+                "percentage": "2.51%"
+            },
+            {
+                "country": "Germany",
+                "population": 151,
+                "percentage": "2.03%"
+            },
+            {
+                "country": "United Kingdom",
+                "population": 124,
+                "percentage": "1.67%"
+            },
+            {
+                "country": "Canada",
+                "population": 75,
+                "percentage": "1.01%"
+            },
+            {
+                "country": "Italy",
+                "population": 69,
+                "percentage": "0.93%"
+            },
+            {
+                "country": "Other",
+                "population": 1126,
+                "percentage": "15.14%"
+            }
+        ]
+    }
+]
