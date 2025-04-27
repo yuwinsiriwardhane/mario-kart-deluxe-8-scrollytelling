@@ -327,6 +327,15 @@ function initialWrTimesDraw()
     console.log(minDate + "\n" + maxDate)
     xScaleWrChart = d3.scaleTime([minDate, maxDate], [margin, svgWidth - margin])
 
+    svg2.append("rect")
+        .attr("x", 0)
+        .attr("y", 0)
+        .attr("width", svgWidth)
+        .attr("height", svgHeight)
+        .attr("fill", "rgb(235, 198, 52)")
+        .attr("stroke", "black")
+        .style("opacity", 0.4)
+
     svg2.append("g")
         .attr("class", "x-axis")
         .attr("transform", "translate(0," + (svgHeight - (margin/2)) + ")")
@@ -337,6 +346,12 @@ function initialWrTimesDraw()
         .call(d3.axisRight(yScaleWrChart).ticks(10))
 
 
+    // draw labels static
+    svg2.append("text")
+        .attr("font-family", "Comic Sans MS, cursive, sans-serif")
+        .attr("x", 540)
+        .attr("y", 45)
+        .text("Time (seconds)")
 }
 
 
@@ -406,7 +421,7 @@ function updateLineChart()
     
     let lineDraw = svg2.selectAll(".line")
         .data([lineDrawData])
-    let titleDraw = svg2.selectAll("text")
+    let titleDraw = svg2.selectAll(".titleText")
     let pngDraw = svg2.selectAll("image")
 
     lineDraw.enter()
@@ -429,26 +444,28 @@ function updateLineChart()
         .data(lineDrawData)
         .join(
             enter => enter.append("text")
+                .attr("class", "titleText")
                 .attr("x", 300)
-                .attr("y", 100)
                 .attr("fill", "black")
                 .attr("text-anchor", "middle")
                 .attr("font-family", "Comic Sans MS, cursive, sans-serif")
                 .attr("font-size", "32px")
                 .text(function(d) {return (d["Track"])})
-                .append("tspan")
-                .attr("text-anchor", "middle")
-                .attr("x", 300)
-                .attr("y", 150)
-                .text("WR Times"),
+                .transition()
+                .duration(1000)
+                .attr("y", 100),
             update => update
+                .transition()
+                .duration(1000)
                 .text(function(d) {return (d["Track"])})
-                .append("tspan")
-                .attr("text-anchor", "middle")
-                .attr("x", 300)
-                .attr("y", 150)
-                .text("WR Times"),
-            exit => exit.remove()
+                .attrTween("y", function(){
+                    return function(t)
+                    {
+                        return 0 + (t * 100)
+                    }
+                }),
+            exit => exit
+                .remove()
     )
     
     // finally draw images
@@ -460,25 +477,30 @@ function updateLineChart()
         .join(
             enter => enter.append("image")
                 .attr("href", function(d) {return "track_pngs/" + d})
-                .attr("x", 350)
-                .attr("y", 150)
+                .attr("x", 0)
+                .attr("y", 120)
                 .attr("width", 200)
                 .attr("height", 200)
                 .attr("stroke", "black")
                 .transition()
                 .duration(2000)
-                .style("opacity", 1),
+                .attr("x", 350),
             update => update
                 .transition()
-                .duration(2000)
-                .style("opacity", 1)
-                .attr("stroke", "black")
-                .attr("href", function(d) {return "track_pngs/" + d}),
-            exit => exit
-                .transition()
-                .duration(2000)
-                .style("opacity", 0)
-                .remove()
+                .duration(1000)
+                .attr("href", function(d) {return "track_pngs/" + d})
+                .attrTween("x", function() {
+                    let origin = 350
+                    return function(t) {
+                        return (250 + (t* 100))
+                    }
+                })
+                .styleTween("opacity", function() {
+                    return function(t) {
+                        return t
+                    }
+                }),
+            exit => exit.remove()
         )
 
     // draw title for track and also put in png for track 
