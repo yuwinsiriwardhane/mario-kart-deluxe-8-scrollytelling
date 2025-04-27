@@ -1,0 +1,135 @@
+@font-face {
+    font-family: gamingFont;
+    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
+}
+
+@font-face {
+    font-family: gamingFontStraight;
+    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
+}
+
+@font-face {
+    font-family: gamingTechnoRace;
+    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
+}
+
+
+.ysiriwar_main_container {
+    display: block;
+    width: 100vw;
+    height: 70vh;
+    font-family: gamingFont;
+    margin-top: -55px;
+    transform: scale(0.9);
+    border: 1px solid white;
+    border-radius: 70px 20px 70px 20px;
+    background: linear-gradient(0.75turn, #03b0e9 0%, #b50100 30%, #000000 60%, #03b0e9 110%);
+
+    .ysiriwar_heading_container {
+        width: 80vw;
+        margin: auto;
+        margin-bottom: 25px;
+        font-size: 45px;
+        font-family: gamingFont;
+        text-align: center;
+        background: -webkit-linear-gradient(#9b2828 10%, #f0ed28 30%, #05b3f8 90%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .ysiriwar_character_attr_container {
+        margin: auto;
+        width: 1610px;
+        height: 1000px;
+        font-size: 45px;
+        font-family: gamingFont;
+        border: 1px solid white;
+        border-radius: 70px 20px 70px 20px;
+        box-shadow: 7px 5px 5px rgb(10, 9, 9);
+
+        .ysiriwar_character_container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+
+            .ysiriwar_character_img {
+                transition: transform 0.5s ease;
+                margin-left: 15px;
+                margin-bottom: 15px;
+            }
+
+            .ysiriwar_character_img:hover {
+                cursor: pointer;
+                transform: scale(1.5);
+            }
+        }
+
+        .character_stats_svg {
+
+            g path,
+            g line {
+                stroke: #e3f0f6;
+                stroke-width: 3px;
+            }
+
+            g text {
+                stroke: #f2ce08;
+                color: #2d0505;
+                font-size: 30px;
+                font-family: gamingTechnoRace;
+            }
+
+            .ysiriwar_background_rect {
+                stroke: #e3f0f6 !important;
+                stroke-width: 4px;
+            }
+
+            .bar {
+                stroke: #e3f0f6;
+                stroke-width: 2px;
+            }
+
+            .seperators {
+                stroke: #e3f0f6 !important;
+            }
+        }
+
+        .ysiriwar_mk_background_2 {
+            display: block;
+            width: 935px;
+            height: 995px;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.8;
+            background-image: url(/images/ysiriwar/mushroom1.jpg);
+            background-size: cover;
+            border: 3px solid #000000;
+            border-radius: 50px 20px 70px 20px;
+        }
+
+        .ysiriwar_selected_character_container {
+            display: block;
+            width: 950px;
+            margin-top: 20px;
+            height: 80px;
+
+            div {
+                display: block;
+                margin: auto;
+                width: fit-content;
+                color: #f7eed1;
+            }
+
+            .selected_character_img {
+                display: inline-block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .active {
+        transform: scale(1.5);
+    }
+}
