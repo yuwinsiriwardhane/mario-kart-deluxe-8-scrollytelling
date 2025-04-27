@@ -160,7 +160,7 @@ const importKartDataset = () => {
 const wrangleKartDataset = (dataset) => {
     kartDataset = dataset.map((item) => {
         let newObj = {
-            "image": `/images/karts/${item["Body"].split(" ").join("")}.webp`,
+            "image": `/images/ysiriwar/karts/${item["Body"].split(" ").join("")}.webp`,
             "kart": item["Body"],
             "acceleration": item["Acceleration"],
             "groundSpeed": item["Ground Speed"],

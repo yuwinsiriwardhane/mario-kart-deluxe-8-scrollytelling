@@ -70,6 +70,15 @@
             <div class="ysiriwar_heading_container">
                 <label>Mario Kart 8 - Main Statistics for Characters</label>
             </div>
+            <div class="ysiriwar_select_type_control_panel">
+                <div>
+                    <label>Select Type ➜ </label>
+                    <select class="form-select ysiriwar_select_type" onchange="getCharacterKart(this.value)">
+                        <option value="characters" selected>Characters</option>
+                        <option value="karts">Karts</option>
+                    </select>
+                </div>
+            </div>
             <div class="ysiriwar_character_attr_container">
                 <div class="row">
                     <div class="col-sm-5 ysiriwar_character_container"></div>
@@ -82,6 +91,21 @@
                             </div>
                         </div>
                         <svg class="character_stats_svg"></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="ysiriwar_kart_attr_container">
+                <div class="row">
+                    <div class="col-sm-5 ysiriwar_kart_container"></div>
+                    <div class="col-sm-7">
+                        <div class="ysiriwar_mk_background_3"></div>
+                        <div class="ysiriwar_selected_kart_container">
+                            <div>
+                                <img class="ysiriwar_selected_kart_img" />
+                                <label class="ysiriwar_selected_kart_name">Select a Kart</label>
+                            </div>
+                        </div>
+                        <svg class="ysiriwar_kart_stats_svg"></svg>
                     </div>
                 </div>
             </div>

@@ -13,12 +13,12 @@
     src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
 }
 
-body {
+/* body {
     padding: 0;
     margin: 0;
     transform: scale(0.83);
     background: linear-gradient(0.75turn, #03b0e9 0%, #b50100 30%, #000000 60%, #03b0e9 110%);
-}
+} */
 
 .ysiriwar_main_container {
 
@@ -52,11 +52,11 @@ body {
     }
 
     .ysiriwar_kart_attr_container {
-        visibility: hidden;
+        visibility: visible;
         position: absolute;
-        left:0;
-        top:108;
-        width: 1650px;
+        left: 28px;
+        top:270px;
+        width: 1610px;
         height: 1000px;
         font-size: 45px;
         font-family: gamingFont;
@@ -116,12 +116,12 @@ body {
 
         .ysiriwar_mk_background_3 {
             display: block;
-            width: 952px;
+            width: 935px;
             height: 995px;
             position: absolute;
             z-index: -1;
             opacity: 0.8;
-            background-image: url(/images/mario6.jpg);
+            background-image: url(/images/ysiriwar/mario6.jpg);
             /* -webkit-transform: scaleX(-1);
             transform: scaleX(-1); */
             background-size: 1150px 990px;
