@@ -1,19 +1,19 @@
-var ysiriwarSelectedKart = null;
-var ysiriwarKartStatsSvg = null;
-var ysiriwarSelectedKartElement = null;
+var ysiriwarSelectedGlider= null;
+var ysiriwarGliderStatsSvg = null;
+var ysiriwarSelectedGliderElement = null;
 
-var ysiriwarKartDataset = [];
+var ysiriwarGliderDataset = [];
 
-const ysiriwarDrawKartScales = () => {
-    ysiriwarKartStatsSvg = d3.select(".ysiriwar_kart_stats_svg").attr("width", "1000px").attr("height", "900px");
-    ysiriwarKartStatsSvg.append("g").attr("transform", `translate(250, 800)`).call(ysiriwarXAxis);
-    ysiriwarKartStatsSvg.append("g").attr("transform", `translate(-25, 0)`).call(ysiriwarYAxis);
+const ysiriwarDrawGliderScales = () => {
+    ysiriwarGliderStatsSvg = d3.select(".ysiriwar_glider_stats_svg").attr("width", "1000px").attr("height", "900px");
+    ysiriwarGliderStatsSvg.append("g").attr("transform", `translate(250, 800)`).call(ysiriwarXAxis);
+    ysiriwarGliderStatsSvg.append("g").attr("transform", `translate(-25, 0)`).call(ysiriwarYAxis);
 }
 
-const ysiriwarDrawKartIntitalBackgroundRects = () => {
-    ysiriwarCreateLinearGradient(ysiriwarKartStatsSvg);
+const ysiriwarDrawGliderIntitalBackgroundRects = () => {
+    ysiriwarCreateLinearGradient(ysiriwarGliderStatsSvg);
 
-    ysiriwarKartStatsSvg.append("g")
+    ysiriwarGliderStatsSvg.append("g")
         .selectAll(".ysiriwar_background_rect")
         .data(ysiriwarMainStats)
         .join(
@@ -45,7 +45,7 @@ const ysiriwarDrawKartIntitalBackgroundRects = () => {
         )
 
     ysiriwarMainStats.forEach((d, i) => {
-        ysiriwarKartStatsSvg.append("g")
+        ysiriwarGliderStatsSvg.append("g")
             .selectAll(".seperators")
             .data([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
             .join(
@@ -72,16 +72,16 @@ const ysiriwarDrawKartIntitalBackgroundRects = () => {
     })
 }
 
-const ysiriwarDrawKartHorizontalChart = () => {
-    ysiriwarKartStatsSvg.selectAll(".bar").transition().duration(1000).attr("width", 0).style("opacity", "0").remove();
+const ysiriwarDrawGliderHorizontalChart = () => {
+    ysiriwarGliderStatsSvg.selectAll(".bar").transition().duration(1000).attr("width", 0).style("opacity", "0").remove();
 
-    let newKartObjArray = ysiriwarFormatObjForStatsChart(ysiriwarSelectedKart);
-    console.log("newKartObjArray", newKartObjArray);
+    let newGliderObjArray = ysiriwarFormatObjForStatsChart(ysiriwarSelectedGlider);
+    console.log("newGliderObjArray", newGliderObjArray);
 
 
-    ysiriwarKartStatsSvg.append("g")
+    ysiriwarGliderStatsSvg.append("g")
         .selectAll(".bar")
-        .data(newKartObjArray)
+        .data(newGliderObjArray)
         .join(
             (enter) =>
                 enter
@@ -112,11 +112,11 @@ const ysiriwarDrawKartHorizontalChart = () => {
         )
 }
 
-const ysiriwarWrangleKartDataset = (dataset) => {
-    ysiriwarKartDataset = dataset.map((item) => {
+const ysiriwarWrangleGliderDataset = (dataset) => {
+    ysiriwarGliderDataset = dataset.map((item) => {
         let newObj = {
-            "image": `/images/ysiriwar/karts/${item["Body"].split(" ").join("")}.webp`,
-            "kart": item["Body"],
+            "image": `/images/ysiriwar/gliders/${item["Body"].split(" ").join("")}.webp`,
+            "glider": item["Body"],
             "acceleration": item["Acceleration"],
             "groundSpeed": item["Ground Speed"],
             "groundHandling": item["Ground Handling"],
@@ -127,27 +127,27 @@ const ysiriwarWrangleKartDataset = (dataset) => {
         return newObj;
     });
 
-    console.log("wrangleKartDataset => ", ysiriwarKartDataset);
-    return ysiriwarKartDataset;
+    console.log("wrangleGliderDataset => ", ysiriwarGliderDataset);
+    return ysiriwarGliderDataset;
 }
 
-const ysiriwarPopulateKartImages = () => {
-    let kartContainer = d3.select(".ysiriwar_kart_container");
+const ysiriwarPopulateGliderImages = () => {
+    let gliderContainer = d3.select(".ysiriwar_glider_container");
 
-    kartContainer.selectAll("img")
-        .data(ysiriwarKartDataset)
+    gliderContainer.selectAll("img")
+        .data(ysiriwarGliderDataset)
         .join(
             (enter) =>
                 enter
                     .append("img")
-                    .attr("class", "ysiriwar_kart_img")
+                    .attr("class", "ysiriwar_glider_img")
                     .attr("id", (d) => {
-                        let formatName = d.kart.split(" ").join("")
+                        let formatName = d.glider.split(" ").join("")
                         return formatName;
                     })
                     .attr("src", (d) => d.image)
-                    .style("width", "85px")
-                    .style("height", "75px")
+                    .style("width", "110px")
+                    .style("height", "110px")
                     .style("opacity", "0")
                     .call(selection => {
                         selection.transition().duration(1000).style("opacity", "1")
@@ -155,47 +155,47 @@ const ysiriwarPopulateKartImages = () => {
             (update) => update,
             (exit) => exit
         )
-        .on("click", (event, d) => ysiriwarSelectKart(d))
+        .on("click", (event, d) => ysiriwarSelectGlider(d))
         .on("mouseover", function(e, d) {
-            ysiriwarToolTip.style("visibility", "visible").html(`${d.kart}`)
+            ysiriwarToolTip.style("visibility", "visible").html(`${d.glider}`)
         })
         .on("mousemove", function (event) {
-            return ysiriwarToolTip.style("top", `${(event.pageY + 55)}px`).style("left", `${event.pageX - 30}px`)
+            return ysiriwarToolTip.style("top", `${(event.pageY + 55)}px`).style("left", `${event.pageX - 50}px`)
         })
         .on("mouseout", function (event) {
             ysiriwarToolTip.style("visibility", "hidden");
         })
 }
 
-const ysiriwarSelectKart = (kartData) => {
-    if (ysiriwarSelectedKartElement !== null) {
-        ysiriwarSelectedKartElement.attr("class", "ysiriwar_kart_img");
+const ysiriwarSelectGlider= (gliderData) => {
+    if (ysiriwarSelectedGliderElement !== null) {
+        ysiriwarSelectedGliderElement.attr("class", "ysiriwar_glider_img");
     }
 
-    console.log("ysiriwarSelectedKart", kartData);
-    ysiriwarSelectedKart = kartData;
+    console.log("ysiriwarSelectedGlider", gliderData);
+    ysiriwarSelectedGlider= gliderData;
 
-    ysiriwarSelectedKartElement = d3.select(`#${kartData.kart.split(" ").join("")}`);
-    ysiriwarSelectedKartElement.attr("class", "ysiriwar_kart_img active");
+    ysiriwarSelectedGliderElement = d3.select(`#${gliderData.glider.split(" ").join("")}`);
+    ysiriwarSelectedGliderElement.attr("class", "ysiriwar_glider_img active");
 
-    let ysiriwarSelectedKartLabel = d3.select(".ysiriwar_selected_kart_name");
-    let ysiriwarSelectedKartImg = d3.select(".ysiriwar_selected_kart_img");
+    let ysiriwarSelectedGliderLabel = d3.select(".ysiriwar_selected_glider_name");
+    let ysiriwarSelectedGliderImg = d3.select(".ysiriwar_selected_glider_img");
 
-    ysiriwarSelectedKartLabel
+    ysiriwarSelectedGliderLabel
         .style("opacity", 0)
-        .text(`${ysiriwarSelectedKart.kart}`)
+        .text(`${ysiriwarSelectedGlider.glider}`)
         .transition()
         .duration(500)
-        .text(ysiriwarSelectedKart.kart)
+        .text(ysiriwarSelectedGlider.glider)
         .style("opacity", "1");
 
-    ysiriwarSelectedKartImg.attr("src", `${ysiriwarSelectedKart.image}`)
+    ysiriwarSelectedGliderImg.attr("src", `${ysiriwarSelectedGlider.image}`)
         .style("width", "100px").style("height", "90px")
         .style("opacity", 0)
         .transition()
         .duration(800)
         .style("opacity", "1");
 
-    ysiriwarDrawKartHorizontalChart();
+    ysiriwarDrawGliderHorizontalChart();
     ysiriwarDrawOverallHorizontalChart();
 }

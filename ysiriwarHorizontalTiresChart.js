@@ -1,19 +1,19 @@
-var ysiriwarSelectedKart = null;
-var ysiriwarKartStatsSvg = null;
-var ysiriwarSelectedKartElement = null;
+var ysiriwarSelectedTire = null;
+var ysiriwarTireStatsSvg = null;
+var ysiriwarSelectedTireElement = null;
 
-var ysiriwarKartDataset = [];
+var ysiriwarTireDataset = [];
 
-const ysiriwarDrawKartScales = () => {
-    ysiriwarKartStatsSvg = d3.select(".ysiriwar_kart_stats_svg").attr("width", "1000px").attr("height", "900px");
-    ysiriwarKartStatsSvg.append("g").attr("transform", `translate(250, 800)`).call(ysiriwarXAxis);
-    ysiriwarKartStatsSvg.append("g").attr("transform", `translate(-25, 0)`).call(ysiriwarYAxis);
+const ysiriwarDrawTireScales = () => {
+    ysiriwarTireStatsSvg = d3.select(".ysiriwar_tire_stats_svg").attr("width", "1000px").attr("height", "900px");
+    ysiriwarTireStatsSvg.append("g").attr("transform", `translate(250, 800)`).call(ysiriwarXAxis);
+    ysiriwarTireStatsSvg.append("g").attr("transform", `translate(-25, 0)`).call(ysiriwarYAxis);
 }
 
-const ysiriwarDrawKartIntitalBackgroundRects = () => {
-    ysiriwarCreateLinearGradient(ysiriwarKartStatsSvg);
+const ysiriwarDrawTireIntitalBackgroundRects = () => {
+    ysiriwarCreateLinearGradient(ysiriwarTireStatsSvg);
 
-    ysiriwarKartStatsSvg.append("g")
+    ysiriwarTireStatsSvg.append("g")
         .selectAll(".ysiriwar_background_rect")
         .data(ysiriwarMainStats)
         .join(
@@ -45,7 +45,7 @@ const ysiriwarDrawKartIntitalBackgroundRects = () => {
         )
 
     ysiriwarMainStats.forEach((d, i) => {
-        ysiriwarKartStatsSvg.append("g")
+        ysiriwarTireStatsSvg.append("g")
             .selectAll(".seperators")
             .data([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
             .join(
@@ -72,16 +72,16 @@ const ysiriwarDrawKartIntitalBackgroundRects = () => {
     })
 }
 
-const ysiriwarDrawKartHorizontalChart = () => {
-    ysiriwarKartStatsSvg.selectAll(".bar").transition().duration(1000).attr("width", 0).style("opacity", "0").remove();
+const ysiriwarDrawTireHorizontalChart = () => {
+    ysiriwarTireStatsSvg.selectAll(".bar").transition().duration(1000).attr("width", 0).style("opacity", "0").remove();
 
-    let newKartObjArray = ysiriwarFormatObjForStatsChart(ysiriwarSelectedKart);
-    console.log("newKartObjArray", newKartObjArray);
+    let newTireObjArray = ysiriwarFormatObjForStatsChart(ysiriwarSelectedTire);
+    console.log("newTireObjArray", newTireObjArray);
 
 
-    ysiriwarKartStatsSvg.append("g")
+    ysiriwarTireStatsSvg.append("g")
         .selectAll(".bar")
-        .data(newKartObjArray)
+        .data(newTireObjArray)
         .join(
             (enter) =>
                 enter
@@ -112,11 +112,11 @@ const ysiriwarDrawKartHorizontalChart = () => {
         )
 }
 
-const ysiriwarWrangleKartDataset = (dataset) => {
-    ysiriwarKartDataset = dataset.map((item) => {
+const ysiriwarWrangleTireDataset = (dataset) => {
+    ysiriwarTireDataset = dataset.map((item) => {
         let newObj = {
-            "image": `/images/ysiriwar/karts/${item["Body"].split(" ").join("")}.webp`,
-            "kart": item["Body"],
+            "image": `/images/ysiriwar/tires/${item["Body"].split(" ").join("")}.webp`,
+            "tire": item["Body"],
             "acceleration": item["Acceleration"],
             "groundSpeed": item["Ground Speed"],
             "groundHandling": item["Ground Handling"],
@@ -127,27 +127,27 @@ const ysiriwarWrangleKartDataset = (dataset) => {
         return newObj;
     });
 
-    console.log("wrangleKartDataset => ", ysiriwarKartDataset);
-    return ysiriwarKartDataset;
+    console.log("wrangleTireDataset => ", ysiriwarTireDataset);
+    return ysiriwarTireDataset;
 }
 
-const ysiriwarPopulateKartImages = () => {
-    let kartContainer = d3.select(".ysiriwar_kart_container");
+const ysiriwarPopulateTireImages = () => {
+    let tireContainer = d3.select(".ysiriwar_tire_container");
 
-    kartContainer.selectAll("img")
-        .data(ysiriwarKartDataset)
+    tireContainer.selectAll("img")
+        .data(ysiriwarTireDataset)
         .join(
             (enter) =>
                 enter
                     .append("img")
-                    .attr("class", "ysiriwar_kart_img")
+                    .attr("class", "ysiriwar_tire_img")
                     .attr("id", (d) => {
-                        let formatName = d.kart.split(" ").join("")
+                        let formatName = d.tire.split(" ").join("")
                         return formatName;
                     })
                     .attr("src", (d) => d.image)
-                    .style("width", "85px")
-                    .style("height", "75px")
+                    .style("width", "120px")
+                    .style("height", "110px")
                     .style("opacity", "0")
                     .call(selection => {
                         selection.transition().duration(1000).style("opacity", "1")
@@ -155,47 +155,47 @@ const ysiriwarPopulateKartImages = () => {
             (update) => update,
             (exit) => exit
         )
-        .on("click", (event, d) => ysiriwarSelectKart(d))
+        .on("click", (event, d) => ysiriwarSelectTire(d))
         .on("mouseover", function(e, d) {
-            ysiriwarToolTip.style("visibility", "visible").html(`${d.kart}`)
+            ysiriwarToolTip.style("visibility", "visible").html(`${d.tire}`)
         })
         .on("mousemove", function (event) {
-            return ysiriwarToolTip.style("top", `${(event.pageY + 55)}px`).style("left", `${event.pageX - 30}px`)
+            return ysiriwarToolTip.style("top", `${(event.pageY + 55)}px`).style("left", `${event.pageX - 50}px`)
         })
         .on("mouseout", function (event) {
             ysiriwarToolTip.style("visibility", "hidden");
         })
 }
 
-const ysiriwarSelectKart = (kartData) => {
-    if (ysiriwarSelectedKartElement !== null) {
-        ysiriwarSelectedKartElement.attr("class", "ysiriwar_kart_img");
+const ysiriwarSelectTire = (tireData) => {
+    if (ysiriwarSelectedTireElement !== null) {
+        ysiriwarSelectedTireElement.attr("class", "ysiriwar_tire_img");
     }
 
-    console.log("ysiriwarSelectedKart", kartData);
-    ysiriwarSelectedKart = kartData;
+    console.log("ysiriwarSelectedTire", tireData);
+    ysiriwarSelectedTire = tireData;
 
-    ysiriwarSelectedKartElement = d3.select(`#${kartData.kart.split(" ").join("")}`);
-    ysiriwarSelectedKartElement.attr("class", "ysiriwar_kart_img active");
+    ysiriwarSelectedTireElement = d3.select(`#${tireData.tire.split(" ").join("")}`);
+    ysiriwarSelectedTireElement.attr("class", "ysiriwar_tire_img active");
 
-    let ysiriwarSelectedKartLabel = d3.select(".ysiriwar_selected_kart_name");
-    let ysiriwarSelectedKartImg = d3.select(".ysiriwar_selected_kart_img");
+    let ysiriwarSelectedTireLabel = d3.select(".ysiriwar_selected_tire_name");
+    let ysiriwarSelectedTireImg = d3.select(".ysiriwar_selected_tire_img");
 
-    ysiriwarSelectedKartLabel
+    ysiriwarSelectedTireLabel
         .style("opacity", 0)
-        .text(`${ysiriwarSelectedKart.kart}`)
+        .text(`${ysiriwarSelectedTire.tire}`)
         .transition()
         .duration(500)
-        .text(ysiriwarSelectedKart.kart)
+        .text(ysiriwarSelectedTire.tire)
         .style("opacity", "1");
 
-    ysiriwarSelectedKartImg.attr("src", `${ysiriwarSelectedKart.image}`)
+    ysiriwarSelectedTireImg.attr("src", `${ysiriwarSelectedTire.image}`)
         .style("width", "100px").style("height", "90px")
         .style("opacity", 0)
         .transition()
         .duration(800)
         .style("opacity", "1");
 
-    ysiriwarDrawKartHorizontalChart();
+    ysiriwarDrawTireHorizontalChart();
     ysiriwarDrawOverallHorizontalChart();
 }

@@ -1,58 +1,22 @@
-var characterDataset = [];
-var mainStats = ["Weight", "Acceleration", "Ground Speed", "Ground Handling", "On Road Traction"]
+var ysiriwarSelectedCharacter = null;
+var ysiriwarCharacterStatsSvg = null;
+var ysiriwarSelectedCharacterElement = null;
 
-var selectedCharacter = null;
-var characterStatsSvg = null;
-var selectedCharacterElement = null;
-var xScale = null;
-var yScale = null;
-var xAxis = null;
-var yAxis = null;
+var ysiriwarCharacterDataset = [];
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    importCharacterDataset();
-    drawScales();
-    drawIntitalBackgroundRects();
-});
-
-const drawScales = () => {
-    characterStatsSvg = d3.select(".character_stats_svg").attr("width", "1000px").attr("height", "900px");
-
-    xScale = d3.scaleLinear().domain([0, 11]).range([10, 650]);
-    yScale = d3.scaleBand().domain(mainStats.map(d => d)).range([0, 800]).padding(0.2);
-
-    xAxis = d3.axisBottom(xScale).tickSize(8).tickPadding(20).tickFormat((d) => {
-        return d === 11 ? "⭐️" : d;
-    });
-
-    yAxis = d3.axisRight(yScale).tickSize(8).tickPadding(20);
-
-    characterStatsSvg.append("g").attr("transform", `translate(250, 800)`).call(xAxis);
-    characterStatsSvg.append("g").attr("transform", `translate(-10, -20)`).call(yAxis);
+const ysiriwarDrawScales = () => {
+    ysiriwarCharacterStatsSvg = d3.select(".ysiriwar_character_stats_svg").attr("width", "1000px").attr("height", "900px");
+    ysiriwarCharacterStatsSvg.append("g").attr("transform", `translate(250, 800)`).call(ysiriwarXAxis);
+    ysiriwarCharacterStatsSvg.append("g").attr("transform", `translate(-10, -20)`).call(ysiriwarYAxis);
 }
 
-const drawIntitalBackgroundRects = () => {
-    characterStatsSvg.append("defs")
-        .append("linearGradient")
-        .attr("id", "bar-gradient")
-        .attr("x1", "0%")
-        .attr("y1", "0%")
-        .attr("x2", "100%")
-        .attr("y2", "0%")
-        .selectAll("stop")
-        .data([
-            { offset: "25%", color: "#b50100" },
-            { offset: "75%", color: "#f2ce08" },
-        ])
-        .enter()
-        .append("stop")
-        .attr("offset", d => d.offset)
-        .attr("stop-color", d => d.color);
+const ysiriwarDrawIntitalCharacterBackgroundRects = () => {
+    ysiriwarCreateLinearGradient(ysiriwarCharacterStatsSvg);
 
-    characterStatsSvg.append("g")
+    ysiriwarCharacterStatsSvg.append("g")
         .selectAll(".ysiriwar_background_rect")
-        .data(mainStats)
+        .data(ysiriwarMainStats)
         .join(
             (enter) =>
                 enter
@@ -60,7 +24,7 @@ const drawIntitalBackgroundRects = () => {
                     .attr("class", "ysiriwar_background_rect")
                     .attr("x", 0)
                     .attr("y", (d) => {
-                        return yScale(d)
+                        return ysiriwarYScale(d)
                     })
                     .attr("height", 55)
                     .attr("width", 0)
@@ -81,18 +45,18 @@ const drawIntitalBackgroundRects = () => {
             (exit) => exit
         )
 
-    mainStats.forEach((d, i) => {
-        characterStatsSvg.append("g")
+    ysiriwarMainStats.forEach((d, i) => {
+        ysiriwarCharacterStatsSvg.append("g")
             .selectAll(".seperators")
             .data([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
             .join(
                 (enter) =>
                     enter.append("line")
                         .attr("class", "seperators")
-                        .attr("x1", (d) => xScale(d))
-                        .attr("x2", (d) => xScale(d))
-                        .attr("y1", yScale(d))
-                        .attr("y2", yScale(d) + 55)
+                        .attr("x1", (d) => ysiriwarXScale(d))
+                        .attr("x2", (d) => ysiriwarXScale(d))
+                        .attr("y1", ysiriwarYScale(d))
+                        .attr("y2", ysiriwarYScale(d) + 55)
                         .attr("stroke", "white")
                         .attr("stroke-width", 2)
                         .attr("transform", "translate(252, 12)")
@@ -109,14 +73,13 @@ const drawIntitalBackgroundRects = () => {
     })
 }
 
-const drawHorizontalChart = () => {
-    characterStatsSvg.selectAll(".bar").transition().duration(1000).attr("width", 0).style("opacity", "0").remove();
+const ysiriwarDrawHorizontalChart = () => {
+    ysiriwarCharacterStatsSvg.selectAll(".bar").transition().duration(1000).attr("width", 0).style("opacity", "0").remove();
 
-    let newCharacterObjArray = formatCharacterObjForStatsChart();
+    let newCharacterObjArray = ysiriwarFormatObjForStatsChart(ysiriwarSelectedCharacter);
     console.log("newCharacterObjArray", newCharacterObjArray);
 
-
-    characterStatsSvg.append("g")
+    ysiriwarCharacterStatsSvg.append("g")
         .selectAll(".bar")
         .data(newCharacterObjArray)
         .join(
@@ -126,7 +89,7 @@ const drawHorizontalChart = () => {
                     .attr("class", "bar")
                     .attr("x", 0)
                     .attr("y", (d) => {
-                        return yScale(d.name)
+                        return ysiriwarYScale(d.name)
                     })
                     .attr("height", 55)
                     .attr("width", 0)
@@ -139,7 +102,7 @@ const drawHorizontalChart = () => {
                         selection.transition()
                             .duration(800)
                             .delay(400)
-                            .attr("width", (d) => xScale(+d.value))
+                            .attr("width", (d) => ysiriwarXScale(+d.value))
                             .style("opacity", "0.8")
                     }),
             (update) => update,
@@ -147,13 +110,6 @@ const drawHorizontalChart = () => {
         )
 }
 
-const importCharacterDataset = () => {
-    d3.csv("/data/MK8_Character_Stats.csv").then(data => {
-        console.log("characterDataset => ", data);
-        characterDataset = wrangleCharacterDataset(data);
-        populateCharacterImages();
-    });
-}
 
 const wrangleCharacterDataset = (dataset) => {
     characterDataset = dataset.map((item) => {
@@ -176,7 +132,7 @@ const wrangleCharacterDataset = (dataset) => {
 
 const populateCharacterImages = () => {
     let characterContainer = d3.select(".ysiriwar_character_container");
-    console.log("dasdas => ", characterDataset);
+
     characterContainer.selectAll("img")
         .data(characterDataset)
         .join(
@@ -199,73 +155,46 @@ const populateCharacterImages = () => {
             (exit) => exit
         )
         .on("click", (event, d) => selectCharacter(d))
+        .on("mouseover", function(e, d) {
+            ysiriwarToolTip.style("visibility", "visible").html(`${d.driver}`)
+        })
+        .on("mousemove", function (event) {
+            return ysiriwarToolTip.style("top", `${(event.pageY + 55)}px`).style("left", `${event.pageX - 30}px`)
+        })
+        .on("mouseout", function (event) {
+            ysiriwarToolTip.style("visibility", "hidden");
+        })
 }
 
 const selectCharacter = (characterData) => {
-    if (selectedCharacterElement !== null) {
-        selectedCharacterElement.attr("class", "ysiriwar_character_img");
+    if (ysiriwarSelectedCharacterElement !== null) {
+        ysiriwarSelectedCharacterElement.attr("class", "ysiriwar_character_img");
     }
 
     console.log("selectCharacter", characterData);
-    selectedCharacter = characterData;
+    ysiriwarSelectedCharacter = characterData;
 
-    selectedCharacterElement = d3.select(`#${characterData.driver.split(" ").join("")}`);
-    selectedCharacterElement.attr("class", "ysiriwar_character_img active");
+    ysiriwarSelectedCharacterElement = d3.select(`#${characterData.driver.split(" ").join("")}`);
+    ysiriwarSelectedCharacterElement.attr("class", "ysiriwar_character_img active");
 
     let selectedCharLabel = d3.select(".selected_character_name");
     let selectedCharImg = d3.select(".selected_character_img");
 
     selectedCharLabel
         .style("opacity", 0)
-        .text(selectedCharacter.driver)
+        .text(ysiriwarSelectedCharacter.driver)
         .transition()
         .duration(500)
-        .text(selectedCharacter.driver)
+        .text(ysiriwarSelectedCharacter.driver)
         .style("opacity", "1");
 
-    selectedCharImg.attr("src", `${selectedCharacter.image}`)
+    selectedCharImg.attr("src", `${ysiriwarSelectedCharacter.image}`)
         .style("width", "85px").style("height", "85px")
         .style("opacity", 0)
         .transition()
         .duration(800)
-        .style("opacity", "1");
+        .style("opacity", "1")
 
-    drawHorizontalChart();
-}
-
-const formatCharacterObjForStatsChart = () => {
-    let newArrayObj = [];
-
-    for (let [key, value] of Object.entries(selectedCharacter)) {
-        if (key === "driver" || key === "image") {
-            continue;
-        }
-
-        switch (key) {
-            case "weight":
-                newObj = { name: "Weight", value: value };
-                newArrayObj.push(newObj);
-                break;
-            case "acceleration":
-                newObj = { name: "Acceleration", value: value };
-                newArrayObj.push(newObj);
-                break;
-            case "groundSpeed":
-                newObj = { name: "Ground Speed", value: value };
-                newArrayObj.push(newObj);
-                break;
-            case "groundHandling":
-                newObj = { name: "Ground Handling", value: value };
-                newArrayObj.push(newObj);
-                break;
-            case "onRoadTraction":
-                newObj = { name: "On Road Traction", value: value };
-                newArrayObj.push(newObj);
-                break;
-            default:
-                return;
-        }
-    }
-
-    return newArrayObj;
+    ysiriwarDrawHorizontalChart();
+    ysiriwarDrawOverallHorizontalChart();
 }

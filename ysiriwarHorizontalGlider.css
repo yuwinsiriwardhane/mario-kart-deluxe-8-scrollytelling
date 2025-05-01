@@ -1,50 +1,6 @@
-@font-face {
-    font-family: gamingFont;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
-}
-
-@font-face {
-    font-family: gamingFontStraight;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
-}
-
-@font-face {
-    font-family: gamingTechnoRace;
-    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
-}
-
 .ysiriwar_main_container {
 
-    .ysiriwar_select_type_control_panel{
-        display: block;
-        width: 1650px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-
-        div {
-            width: fit-content;
-            text-align: center;
-            margin: auto;
-            font-family: gamingFontStraight;
-            font-size: 25px;
-            color: white;
-
-            label {
-                margin-right: 10px;
-                color: aliceblue;
-            }
-
-            .ysiriwar_select_type {
-                display: inline-block;
-                width: 290px;
-                font-size: 25px;
-                cursor: pointer;
-            }
-        }
-
-    }
-
-    .ysiriwar_kart_attr_container {
+    .ysiriwar_glider_attr_container {
         visibility: hidden;
         position: absolute;
         left: 20px;
@@ -58,25 +14,26 @@
         border-radius: 70px 20px 70px 20px;
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
 
-        .ysiriwar_kart_container {
+        .ysiriwar_glider_container {
             display: flex;
             flex-wrap: wrap;
-            padding-top: 20px;
+            height: 1000px;
+            padding-top: 50px;
             padding-bottom: 20px;
 
-            .ysiriwar_kart_img {
+            .ysiriwar_glider_img {
                 transition: transform 0.5s ease;
-                margin-left: 30px;
-                margin-bottom: 15px;
+                margin-left: 80px;
+                margin-bottom: 5px;
             }
 
-            .ysiriwar_kart_img:hover {
+            .ysiriwar_glider_img:hover {
                 cursor: pointer;
                 transform: scale(1.4);
             }
         }
 
-        .ysiriwar_kart_stats_svg {
+        .ysiriwar_glider_stats_svg {
 
             g path,
             g line {
@@ -107,14 +64,14 @@
             }
         }
 
-        .ysiriwar_mk_background_3 {
+        .ysiriwar_mk_background_5 {
             display: block;
             width: 935px;
             height: 995px;
             position: absolute;
             z-index: -1;
-            opacity: 0.8;
-            background-image: url(/images/ysiriwar/mario6.jpg);
+            opacity: 0.7;
+            background-image: url(/images/ysiriwar/mushroom2.jpg);
             /* -webkit-transform: scaleX(-1);
             transform: scaleX(-1); */
             background-size: 1150px 990px;
@@ -123,7 +80,7 @@
             border-radius: 50px 20px 70px 20px;
         }
 
-        .ysiriwar_selected_kart_container {
+        .ysiriwar_selected_glider_container {
             display: block;
             width: 950px;
             margin-top: 20px;
@@ -136,7 +93,7 @@
                 color: #f7eed1;
             }
 
-            .selected_kart_img {
+            .selected_glider_img {
                 display: inline-block;
                 margin-left: auto;
                 margin-right: auto;
