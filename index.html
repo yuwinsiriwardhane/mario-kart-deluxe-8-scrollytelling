@@ -1,49 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script src="https://d3js.org/d3.v7.min.js"></script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>å
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/ysiriwarHorizontalChart.css">
+    <link rel="stylesheet" href="/ysiriwarHorizontalGlider.css">
+    <link rel="stylesheet" href="/ysiriwarHorizontalKartChart.css">
+    <link rel="stylesheet" href="/ysiriwarHorizontalTiresChart.css">
+    <link rel="stylesheet" href="/ysiriwarHorizontalOverall.css">
+</head>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poetsen+One&display=swap" rel="stylesheet">
+<body>
+    <div class="titleDiv">
+        <h1 class="topTitle">Mario Kart 8: Game and Competitive Analysis</h1>
+        <span class="authorsList">
+            Authors/Developers: Aidan, Luke, Nicholas, Ryan, Yuwin
+        </span>
+        <span>
+            Story Abstract:
+        </span>
+        <span style="text-align: center; margin-top: 50px;">-INSERT another IMAGE-</span>
+        <img src="marioRacing.jpg" class="img1">
+        <img src="MK8DX_-_Bowser_artwork.jpg" class="img2">
+    </div>
+    <div class="introDiv">
+        <h1 class="introTitle">What is Mario Kart?</h1>
+        <p class="standardParagraph">
+            Back 50 years ago when the digital age was just beginning arcades ruled the gaming industry. All across the
+            United States arcades began to rise in popularity from 1970 on. Many different gaming classics came from
+            this era. You have some more niche games like Dragon's Lair and Street Fighter. And some all time classics
+            like Pac-Man and Donkey Kong. Moving through the decades we come to an era of diversification in video
+            games. One of the many popular genres that takes center stage is the <strong>racing game</strong>. Over the
+            years many different racing games have held the crown as king over all others in the genre. For the arcade
+            period mentioned previously the company "Sega" made games such as Outrun that flooded into arcades across
+            the country. Moving to the start of the 21st century the "Need For Speed" franchise moved into homes
+            allowing gamers to race from the comfort of there couch. However during this time a new racing game was
+            being developed in Japan. This game series would change not only the racing game sphere but entirity of
+            video games itself with its creative mechanics and likeability by all ages. This game is Mario Kart.
+        </p>
+        <p class="standardParagraph">
+            Back 50 years ago when the digital age was just beginning arcades ruled the gaming industry. All across the
+            United States arcades began to rise in popularity from 1970 on. Many different gaming classics came from
+            this era. You have some more niche games like Dragon's Lair and Street Fighter. And some all time classics
+            like Pac-Man and Donkey Kong.
+        </p>
+        <p class="introParagraph"></p>
+    </div>
+    <div class="historyDiv">
+        <h1 class="historyTitle">A Comparison Over History</h1>
+    </div>
+    <div class="marioKartDiv">
+        <h1 class="gameTitle">Game Play Mechanics</h1>
+    </div>
+    <div class="competitiveDiv">
+        <h1 class="compTitle">Competetive Scene</h1>
+    </div>
 
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="titleDiv">
-            <h1 class="topTitle">Mario Kart 8: Game and Competitive Analysis</h1>
-            <span class="authorsList">
-                Authors/Developers: Aidan, Luke, Nicholas, Ryan, Yuwin
-            </span>
-            <span>
-                Story Abstract:
-            </span>
-            <span style="text-align: center; margin-top: 50px;">-INSERT another IMAGE-</span>
-            <img src="marioRacing.jpg" class="img1">
-            <img src="MK8DX_-_Bowser_artwork.jpg" class="img2">
+    <div class="characterMainStatsDiv">
+        <div class="ysiriwar_tooltip_horizontal_stats">Testing</div>
+        <h1 class="compTitle">Main Stats of Characters</h1>
+        <div class="ysiriwar_main_container">
+            <div class="ysiriwar_heading_container">
+                <label>Mario Kart 8 - Main Statistics for Characters</label>
+            </div>
+            <div class="ysiriwar_select_type_control_panel">
+                <div>
+                    <label>Select Type ➜ </label>
+                    <select class="form-select ysiriwar_select_type" onchange="ysiriwarGetType(this.value)">
+                        <option value="characters" selected>Characters</option>
+                        <option value="karts">Karts</option>
+                        <option value="tires">Tires</option>
+                        <option value="gliders">Gliders</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ysiriwar_character_attr_container">
+                <div class="row">
+                    <div class="col-sm-5 ysiriwar_character_container"></div>
+                    <div class="col-sm-7">
+                        <div class="ysiriwar_mk_background_2"></div>
+                        <div class="ysiriwar_selected_character_container">
+                            <div>
+                                <img class="selected_character_img" />
+                                <label class="selected_character_name">Select a Character</label>
+                            </div>
+                        </div>
+                        <svg class="ysiriwar_character_stats_svg"></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="ysiriwar_kart_attr_container">
+                <div class="row">
+                    <div class="col-sm-5 ysiriwar_kart_container"></div>
+                    <div class="col-sm-7">
+                        <div class="ysiriwar_mk_background_3"></div>
+                        <div class="ysiriwar_selected_kart_container">
+                            <div>
+                                <img class="ysiriwar_selected_kart_img" />
+                                <label class="ysiriwar_selected_kart_name">Select a Kart</label>
+                            </div>
+                        </div>
+                        <svg class="ysiriwar_kart_stats_svg"></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="ysiriwar_tire_attr_container">
+                <div class="row">
+                    <div class="col-sm-5 ysiriwar_tire_container"></div>
+                    <div class="col-sm-7">
+                        <div class="ysiriwar_mk_background_4"></div>
+                        <div class="ysiriwar_selected_tire_container">
+                            <div>
+                                <img class="ysiriwar_selected_tire_img" />
+                                <label class="ysiriwar_selected_tire_name">Select a Tire</label>
+                            </div>
+                        </div>
+                        <svg class="ysiriwar_tire_stats_svg"></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="ysiriwar_glider_attr_container">
+                <div class="row">
+                    <div class="col-sm-5 ysiriwar_glider_container"></div>
+                    <div class="col-sm-7">
+                        <div class="ysiriwar_mk_background_5"></div>
+                        <div class="ysiriwar_selected_glider_container">
+                            <div>
+                                <img class="ysiriwar_selected_glider_img" />
+                                <label class="ysiriwar_selected_glider_name">Select a Tire</label>
+                            </div>
+                        </div>
+                        <svg class="ysiriwar_glider_stats_svg"></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="ysiriwar_overall_attr_container">
+                <div class="row">
+                    <div class="col-sm-4 ysiriwar_overall_container">
+                        <div>
+                            <img src="/images/ysiriwar/MarioDriftingStandardKart.webp" /> 
+                        </div>
+                        <div>
+                            <img src="/images/ysiriwar/YoshiMachBike.webp"  />
+                        </div>
+                        <div>
+                            <img src="/images/ysiriwar/MK8LemmyStandardBike.webp"  />
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="ysiriwar_mk_background_6"></div>
+                        <div class="ysiriwar_selected_overall_container">
+                            <div>
+                                <img class="ysiriwar_overall_character_img" />
+                                <img class="ysiriwar_overall_kart_img"/>
+                                <img class="ysiriwar_overall_tire_img"/>
+                                <img class="ysiriwar_overall_glider_img"/>
+                                <label class="ysiriwar_selected_overall_name">Make your Build</label>
+                            </div>
+                        </div>
+                        <svg class="ysiriwar_overall_stats_svg"></svg>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="introDiv">
-            <h1 class="introTitle">What is Mario Kart?</h1>
-            <p class="standardParagraph">
-                Back 50 years ago when the digital age was just beginning arcades ruled the gaming industry. All across the United States arcades began to rise in popularity from 1970 on. Many different gaming classics came from this era. You have some more niche games like Dragon's Lair and Street Fighter. And some all time classics like Pac-Man and Donkey Kong. Moving through the decades we come to an era of diversification in video games. One of the many popular genres that takes center stage is the <strong>racing game</strong>. Over the years many different racing games have held the crown as king over all others in the genre. For the arcade period mentioned previously the company "Sega" made games such as Outrun that flooded into arcades across the country. Moving to the start of the 21st century the "Need For Speed" franchise moved into homes allowing gamers to race from the comfort of there couch. However during this time a new racing game was being developed in Japan. This game series would change not only the racing game sphere but entirity of video games itself with its creative mechanics and likeability by all ages. This game is Mario Kart.
-            </p>
-            <p class="standardParagraph">
-                Back 50 years ago when the digital age was just beginning arcades ruled the gaming industry. All across the United States arcades began to rise in popularity from 1970 on. Many different gaming classics came from this era. You have some more niche games like Dragon's Lair and Street Fighter. And some all time classics like Pac-Man and Donkey Kong. 
-            </p>
-            <p class="introParagraph"></p>
-        </div>
-        <div class="historyDiv">
-            <h1 class="historyTitle">A Comparison Over History</h1>
-        </div>
-        <div class="marioKartDiv">
-            <h1 class="gameTitle">Game Play Mechanics</h1>
-        </div>
-        <div class="competitiveDiv">
-            <h1 class="compTitle">Competetive Scene</h1>
-        </div>
-    </body>
+    </div>
+</body>
+<script src="/ysiriwarMain.js" type="text/javascript"></script>
+<script src="/ysiriwarHorizontalChart.js" type="text/javascript"></script>
+<script src="/ysiriwarHorizontalKartChart.js" type="text/javascript"></script>
+<script src="/ysiriwarHorizontalTiresChart.js" type="text/javascript"></script>
+<script src="/ysiriwarHorizontalGlider.js" type="text/javascript"></script>
+<script src="/ysiriwarHorizontalOverall.js" type="text/javascript"></script>
+
 </html>

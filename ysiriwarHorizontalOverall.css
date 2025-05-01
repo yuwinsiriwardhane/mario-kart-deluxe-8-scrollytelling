@@ -1,0 +1,100 @@
+.ysiriwar_main_container {
+
+    .ysiriwar_overall_attr_container {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        width: 1610px;
+        height: 1000px;
+        font-size: 45px;
+        font-family: gamingFont;
+        border: 1px solid white;
+        border-radius: 70px 20px 70px 20px;
+
+        .ysiriwar_overall_container {
+            height: 1000px;
+            padding-top: 50px;
+            padding-bottom: 20px;
+
+            img {
+                display: block;
+                margin: auto;
+                width: 300px;
+                height: 300px;
+                opacity: 0.3;
+            }
+        }
+
+        .ysiriwar_overall_stats_svg {
+
+            g path,
+            g line {
+                stroke: #e3f0f6;
+                stroke-width: 3px;
+            }
+
+            g text {
+                stroke: #000000;
+                stroke-width: 0.5px;
+                color: #f2ce08;
+                font-size: 30px;
+                font-family: gamingTechnoRace;
+            }
+
+            .ysiriwar_background_rect {
+                stroke: #e3f0f6 !important;
+                stroke-width: 4px;
+            }
+
+            .bar {
+                stroke: #e3f0f6;
+                stroke-width: 2px;
+            }
+
+            .seperators {
+                stroke: #e3f0f6 !important;
+            }
+        }
+
+        .ysiriwar_mk_background_6 {
+            display: block;
+            width: 1070px;
+            height: 995px;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.15;
+            background-image: url(/images/ysiriwar/Untitled.001.png);
+            /* -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); */
+            background-size: 1150px 990px;
+            background-repeat: no-repeat;
+            border: 3px solid #000000;
+            border-radius: 50px 20px 70px 20px;
+        }
+
+        .ysiriwar_selected_overall_container {
+            display: block;
+            width: 1280px;
+            margin-left: -220px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            height: 80px;
+
+            div {
+                display: block;
+                margin: auto;
+                width: fit-content;
+                color: #f7eed1;
+                font-size: 50px;
+
+                .ysiriwar_selected_overall_name {
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+    .active {
+        transform: scale(1.4);
+    }
+}
