@@ -143,6 +143,8 @@ function barChartDrawInitial()
     // amount of pixels from edges of svg 
     let margin = 100;
     let botMargin = 50;
+
+    svg1.style("background-color", "black")
     
     svgWidth = parseInt(svgWidth)
     svgHeight = parseInt(svgHeight)
@@ -168,7 +170,7 @@ function barChartDrawInitial()
         .range(["green", "blue", "red"])
 
     svg1.append("image")
-        .attr("href", function(d) {return "chart_backgrounds/salesBackground.PNG"})
+        .attr("href", function(d) {return "chart_backgrounds/salesBackground2.PNG"})
         .attr("x", 110)
         .attr("y", 80)
         .attr("width", 500)
@@ -176,6 +178,7 @@ function barChartDrawInitial()
 
     svg1.append("text")
         .text("Sales (Millions)")
+        .style("fill", "#f7eed1")
         .attr("x", -300)
         .attr("y", 50)
         .attr("transform", "translate(0,0)rotate(-90)")
@@ -187,20 +190,28 @@ function barChartDrawInitial()
         .attr("y", 80)
         .attr("font-size", "32px")
         .attr("font-family", "Lobster, cursive")
+        .style("fill", "#f7eed1")
 
     // draw scales
     svg1.append("g")
+        .style("stroke", "white")
+        .style("fill", "white")
         .attr("class", "x-axis")
         .attr("transform", "translate(0," + (svgHeight - botMargin - (margin/2)) + ")")
         .call(d3.axisBottom(bandScale1))
         .selectAll("text")
+            .style("fill", "#f7eed1")
             .attr("transform", "translate(-10,0)rotate(-35)")
             .style("text-anchor", "end")
             .attr("font-family", "Lobster, cursive")
     svg1.append("g")
+        .style("stroke", "white")
+        .style("fill", "white")
         .attr("class", "y-axis")
         .attr("transform", "translate(" + margin + ","  + (-margin/2) + ")    ")
         .call(d3.axisLeft(yScale))
+        .selectAll("text")
+            .attr("font-size", "18px")
 
 }
 
@@ -238,12 +249,23 @@ function barChartDrawBars()
         .domain(["Gran", "Speed", "Mario"])
         .range(["green", "blue", "red"])
 
+    let xFontSize = 15
+    if(salesCombined == 1)
+    {
+        xFontSize = 18
+    }
+    else
+    {
+        xFontSize = 15
+    }
     // recall scales
     svg1.selectAll(".y-axis")
         .attr("transform", "translate(" + margin + ","  + (-margin/2) + ")    ")
         .transition()
         .duration(2000)
         .call(d3.axisLeft(yScale))
+        .selectAll("text")
+            .attr("font-size", (xFontSize + "px"))
 
     svg1.selectAll(".x-axis")
         .transition()
