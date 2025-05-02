@@ -48,7 +48,7 @@ d3.json("data/weight-class.json").then( function(sankeydata) {
       .attr("class", "link")
       .attr("d", d3.sankeyLinkHorizontal() )
       .style("stroke-width", function(d) { return  d.width; })
-      .style("stroke", "#D3D3D3")
+      .style("stroke", "#404040")
       .style("fill", "none");
 
   var node = svg.append("g")
@@ -77,9 +77,11 @@ d3.json("data/weight-class.json").then( function(sankeydata) {
         .attr("dy", "0.35em")
         .attr("text-anchor", "end")
         .text(function(d) { return d.name; })
+        .style("fill", "#F7EED1")
         .filter(function(d) { return d.x0 < width / 2; })
         .attr("x", function(d) { return d.x1 + 6; })
         .attr("text-anchor", "start");
+        
 
 });
 
