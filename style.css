@@ -28,6 +28,7 @@ Note: or just add them anywhere
 body {
     font-family: gamingFontStraight;
     padding: 10px;
+    font-weight: 400;
 }
 
 /* Title Div Styles */
@@ -58,34 +59,29 @@ body {
     text-align: justify;
     margin-left: 240px;
     margin-right: 240px;
-
     font-family: "Open Sans", sans-serif;
-    font-weight: 100;
     font-style: normal;
 }
 
 /* Title Div Styles */
 .topTitle {
-    /* font-family: "Poetsen One", sans-serif; */
-    font-weight: 400;
     font-style: normal;
     font-size: 58px;
-
     text-align: center;
 }
 
 .authorsList {
-    /* font-family: "Times New Roman", Times, serif; */
-    font-weight: 200;
     font-style: normal;
     font-size: 24px;
-
     text-align: center;
+    background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* History Div Styles */
-.historyDiv
-{
+.historyDiv {
     display: grid;
     place-items: center;
 }
@@ -93,8 +89,7 @@ body {
 /* Game Div Styles */
 
 /* Competetive Div Styles */
-.wrChartDiv
-{
+.wrChartDiv {
     display: grid;
     place-items: center;
 }
@@ -120,10 +115,12 @@ h1,
 h2,
 h3,
 h4 {
-    /* font-family: "Poetsen One", sans-serif; */
-    font-weight: 100;
     letter-spacing: 2px;
     text-align: center;
+    background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 p {
@@ -133,12 +130,14 @@ p {
     font-family: "Open Sans", sans-serif;
     font-size: 25px;
     letter-spacing: 4px;
-    font-weight: 50;
     font-style: normal;
+    background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 hr {
     border: 2px solid #15181b;
     border-radius: 5px;
 }
-
