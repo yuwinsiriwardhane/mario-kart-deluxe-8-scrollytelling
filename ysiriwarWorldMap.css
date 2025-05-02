@@ -1,0 +1,206 @@
+.ysiriwar_worldmap_main_container {
+    position: relative;
+    width: 1660px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    font-family: gamingFont;
+    /* border: 5px solid rgb(255, 243, 243);
+    border-radius: 70px 20px 70px 20px; */
+    /* background: linear-gradient(0.25turn, #03b0e9 0%, #a50000 29%, #000000 80%); */
+    transform: scale(1);
+
+    .ysiriwar_heading_container {
+        width: 1000px;
+        margin: auto;
+        color: black;
+        font-size: 25px;
+        font-family: gamingFont;
+        text-align: center;
+        background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+        /* background: -webkit-linear-gradient(#9b2828 0%, #f0ed28 50%, #05b3f8 80%); */
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .ysiriwar_control_panel_container {
+        width: 1000px;
+        margin: auto;
+        margin-top: 20px;
+
+        .ysiriwar_select_season_control {
+            width: 600px;
+            margin: auto;
+            font-family: gamingFontStraight;
+            font-size: 20px;
+
+            label {
+                /* color: #915a1f; */
+                margin-right: 10px;
+                background: -webkit-linear-gradient(#915a1f 30%, #000000 50%, #915a1f 70%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .ysiriwar_select_season {
+                width: 250px;
+                display: inline-block;
+                cursor: pointer;
+                color: #5b6066;
+                border: 3px solid black;
+                border-radius: 20px 10px 20px 10px;
+            }
+        }
+    }
+
+    .ysiriwar_worldmap_svg_container {
+        display: block;
+        width: 1500px;
+        height: 800px;
+        margin: auto;
+        margin-top: 20px;
+        border: 5px solid black;
+        border-radius: 70px 20px 70px 20px;
+        box-shadow: 7px 5px 5px rgb(10, 9, 9);
+
+        .ysiriwar_worldmap_mk_background {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            width: 1490px;
+            height: 790px;
+            opacity: 1;
+            border: 5px solid black;
+            border-radius: 60px 10px 60px 10px;
+            background-image: url(/images/ysiriwar/mario1.jpg);
+            background-size: cover;
+        }
+
+        .ysiriwar_circle {
+            cursor: pointer;
+            transition: transform 2.3s ease;
+            stroke: whitesmoke;
+            stroke-width: 2px;
+        }
+
+        .ysiriwar_circle:hover {
+            stroke-width: 3px;
+        }
+
+        .ysiriwar_circle_text {
+            font-size: 18px;
+            fill: white;
+            font-weight: bold;
+            pointer-events: none;
+            stroke: #000000;
+        }
+
+        .ysiriwar_circle_size_legend {
+            font-size: 15px;
+            fill: white;
+            font-weight: bold;
+            font-family: gamingFontStraight;
+            pointer-events: none;
+        }
+
+        .ysiriwar_circle_size__legend_text {
+            font-size: 15px;
+            fill: white;
+            font-weight: bold;
+            font-family: "Saira Condensed", sans-serif;
+            pointer-events: none;
+        }
+
+        .ysiriwar_circle_color_legend_heading_text {
+            font-size: 15px;
+            fill: white;
+            font-weight: bold;
+            font-family: gamingFontStraight;
+            pointer-events: none;
+        }
+
+        .ysiriwar_circle_color_legend_text {
+            font-size: 13px;
+            fill: white;
+            font-weight: bold;
+            font-family: "Saira Condensed", sans-serif;
+            pointer-events: none;
+        }
+
+        .ysiriwar_selected_season_text {
+            font-size: 20px;
+            fill: white;
+            font-weight: bold;
+            font-family: gamingFontStraight;
+            pointer-events: none;
+        }
+    }
+
+    .ysiriwar_info_container {
+        width: 1000px;
+        margin: auto;
+        color: aliceblue;
+        margin-top: 15px;
+        font-size: 20px;
+        font-family: "Open Sans", sans-serif;
+        /* font-family: gamingFontStraight; */
+        letter-spacing: 2px;
+        text-align: justify;
+        color: #000000;
+        /* background: -webkit-linear-gradient(#e6cece 2%, #ffce1d 10%, #ffffff 15%, #f0ed28 60%, #05b3f8 80%); */
+        /* background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+
+        li {
+            margin-top: 15px;
+        }
+
+        .ysiriwar_how_this_works_imgs {
+            width: 40px;
+            height: 35px;
+            margin-right: 5px;
+            transition: transform 0.5s;
+        }
+
+        .ysiriwar_how_this_works_imgs:hover {
+            cursor: default;
+            transform: scale(1.2);
+        }
+    }
+}
+
+.ysiriwar_tooltip {
+    position: absolute;
+    font-family: gamingFontStraight;
+    font-size: 15px;
+    z-index: 1;
+    letter-spacing: 2px;
+    visibility: hidden;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+    border: 2px solid #9b2828;
+    border-radius: 20px 10px 20px 10px;
+
+    .tooltip_image {
+        width: 45px;
+        height: 35px;
+        display: block;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .ysiriwar_tooltip_player_count {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .ysiriwar_rank_list {
+        margin: 0;
+    }
+}
