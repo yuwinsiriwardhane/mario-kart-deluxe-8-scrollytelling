@@ -393,6 +393,9 @@ function initialWrTimesDraw()
     let svgWidth = svg2.style('width').replace('px','');
     let svgHeight = svg2.style('height').replace('px','');
 
+    
+    svg2.style("background-color", "black")
+
     // amount of pixels from edges of svg 
     let margin = 100;
 
@@ -467,20 +470,28 @@ function initialWrTimesDraw()
 
     svg2.append("image")
         .attr("class", "background")
-        .attr("href", function(d) {return "chart_backgrounds/wrBackground.PNG"})
+        .attr("href", function(d) {return "chart_backgrounds/wrBackground2.PNG"})
         .attr("x", 120)
         .attr("y", 120)
         .attr("width", 400)
         .attr("height", 400)
 
     svg2.append("g")
+        .style("stroke", "white")
+        .style("fill", "white")
         .attr("class", "x-axis")
         .attr("transform", "translate(0," + (svgHeight - (margin/2)) + ")")
         .call(d3.axisBottom(xScaleWrChart))
+        .selectAll("text")
+            .attr("font-size", "18px")
     svg2.append("g")
+        .style("stroke", "white")
+        .style("fill", "white")
         .attr('class', 'y-axis') 
         .attr("transform", "translate(" + (svgWidth - margin) + ","  + (-margin/2) + ")    ")
         .call(d3.axisRight(yScaleWrChart).ticks(10))
+        .selectAll("text")
+            .attr("font-size", "18px")
 
 
     // draw labels static
@@ -488,6 +499,7 @@ function initialWrTimesDraw()
         .attr("font-family", "Comic Sans MS, cursive, sans-serif")
         .attr("x", 540)
         .attr("y", 45)
+        .attr("fill", "white")
         .text("Time (seconds)")
 }
 
@@ -527,6 +539,8 @@ function updateLineChart()
         .transition()
         .duration(2000)
         .call(d3.axisBottom(xScaleWrChart))
+        .selectAll("text")
+            .attr("font-size", "18px")
 
     // create y axis
     let maxTime = 0;
@@ -551,6 +565,8 @@ function updateLineChart()
         .transition()
         .duration(2000)
         .call(d3.axisRight(yScaleWrChart))
+        .selectAll("text")
+            .attr("font-size", "18px")
     
     // update the lin
     
@@ -571,7 +587,7 @@ function updateLineChart()
         .transition()
         .duration(2000)
             .attr("fill", "none")
-            .attr("stroke", "black")
+            .attr("stroke", "white")
             .attr("stroke-width", 5.5)
             .attr("class", "line")
             .attr("d", d3.line()
@@ -601,7 +617,7 @@ function updateLineChart()
             enter => enter.append("text")
                 .attr("class", "titleText")
                 .attr("x", 300)
-                .attr("fill", "black")
+                .attr("fill", "white")
                 .attr("text-anchor", "middle")
                 .attr("font-family", "Comic Sans MS, cursive, sans-serif")
                 .attr("font-size", "32px")
