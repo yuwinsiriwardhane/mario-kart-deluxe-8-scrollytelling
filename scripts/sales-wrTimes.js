@@ -249,14 +249,17 @@ function barChartDrawBars()
         .domain(["Gran", "Speed", "Mario"])
         .range(["green", "blue", "red"])
 
-    let xFontSize = 15
+    let yFontSize = 15
+    let xFontSize = 10
     if(salesCombined == 1)
     {
+        yFontSize = 18
         xFontSize = 18
     }
     else
     {
-        xFontSize = 15
+        yFontSize = 15
+        xFontSize = 10
     }
     // recall scales
     svg1.selectAll(".y-axis")
@@ -265,13 +268,14 @@ function barChartDrawBars()
         .duration(2000)
         .call(d3.axisLeft(yScale))
         .selectAll("text")
-            .attr("font-size", (xFontSize + "px"))
+            .attr("font-size", (yFontSize + "px"))
 
     svg1.selectAll(".x-axis")
         .transition()
         .duration(2000)
         .call(d3.axisBottom(bandScale1))
         .selectAll("text")
+            .attr("font-size", (xFontSize + "px"))
             .attr("transform", "translate(-10,0)rotate(-35)")
             .style("text-anchor", "end")
             .attr("font-family", "Lobster, cursive")
