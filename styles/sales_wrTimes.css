@@ -47,11 +47,18 @@
     border-bottom-right-radius: 27px;
     box-shadow: 2px 2px 5px
 }
+
 .mergeSalesButton:hover 
 {
     opacity: 0.6;
 }
+
 .mergeSalesButton:active 
 {
     opacity: 0.4
+}
+
+.salesDiv {
+    width: 900px;
+    margin: auto;
 }

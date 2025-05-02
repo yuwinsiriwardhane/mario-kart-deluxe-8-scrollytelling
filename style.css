@@ -31,6 +31,25 @@ body {
     font-weight: 400;
 }
 
+.main-container {
+    position: relative;
+    width: 2000px;
+    margin: auto;
+
+    #div_scatterplot {
+        width: 1000px;
+        margin: auto;
+    }
+
+    .img-title {
+        position: absolute;
+        width: 800px;
+        height: auto;
+        top: 200px;
+        left: 610px;
+    }
+}
+
 /* Title Div Styles */
 .titleDiv {
     position: relative;
@@ -40,20 +59,11 @@ body {
 }
 
 .introDiv {
-    margin-top: 260px;
+    margin-top: 320px;
     display: grid;
     align-items: center;
     vertical-align: middle;
 }
-
-.historyDiv {}
-
-.marioKartDiv {}
-
-.competetiveDiv {}
-
-/* Intro Div Styles */
-.introTitle {}
 
 .introParagraph {
     text-align: justify;
@@ -71,6 +81,7 @@ body {
 }
 
 .authorsList {
+    margin-top: 20px;
     font-style: normal;
     font-size: 24px;
     text-align: center;
@@ -83,7 +94,6 @@ body {
 /* History Div Styles */
 .historyDiv {
     display: grid;
-    place-items: center;
 }
 
 /* Game Div Styles */
