@@ -24,6 +24,7 @@ let data3;
 let salesCombined = 0;
 
 let firstBar = true;
+let mergeSalesButton = document.getElementById("mergeSalesButton")
 
 let data2;
 let data2Split = [];
@@ -110,11 +111,13 @@ function mergeSales()
     {
         salesCombined = 1
         barData = data3
+        mergeSalesButton.textContent = "Un-Merge"
     }
     else
     {
         salesCombined = 0
         barData = data1
+        mergeSalesButton.textContent = "Merge"
     }
     parseFile()
     barChartDrawBars()

@@ -70,7 +70,7 @@
         </p>
         <div class="salesDiv">
             <svg class="salesChart" id="salesChart"></svg>
-            <button class="mergeSalesButton" onclick="mergeSales()"></button>
+            <button id="mergeSalesButton" class="mergeSalesButton" onclick="mergeSales()">Merge</button>
         </div>
     </div>
     <div class="mario-kart-game-play-mechanics-div">
@@ -249,8 +249,15 @@
         </div>
         <div>
             <p>
-                From these different countries far and wide players compete in a variety of different ways. Some
+                From these different countries far and wide players compete in a variety of different ways. Some players choose the competetive battle ground of online versus play. These versus play matchs against other online oppenents can either be in standard Nintendo ranking system play or online lounges. What will be focused on next is more of a track race style of competition. Time trials are a form of Mario Kart competition that involves players all around the globe racing for the fastest possible time. 
             </p>
+            <div class="wrChartDiv">
+                <svg class="wrChart" id="wrChart"></svg>
+                <div>
+                    <button onclick="backwardClickWr()">Previous Track</button>
+                    <button onclick="forwardClickWr()">Next Track</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>

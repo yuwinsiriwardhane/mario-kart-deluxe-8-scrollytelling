@@ -93,6 +93,11 @@ body {
 /* Game Div Styles */
 
 /* Competetive Div Styles */
+.wrChartDiv
+{
+    display: grid;
+    place-items: center;
+}
 
 /* Other Styles */
 .img1 {
