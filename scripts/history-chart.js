@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const margin_scatterplot = {top: 10, right: 30, bottom: 30, left: 60},
-        width_scatterplot = 580 - margin_scatterplot.left - margin_scatterplot.right,
-        height_scatterplot = 400 - margin_scatterplot.top - margin_scatterplot.bottom;
+    const margin_scatterplot = {top: 10, right: 30, bottom: 50, left: 60},
+        width_scatterplot = 980 - margin_scatterplot.left - margin_scatterplot.right,
+        height_scatterplot = 700 - margin_scatterplot.top - margin_scatterplot.bottom;
 
     const svg_scatterplot = d3.select("#svg_scatterplot")
+    .style("background-color", "white")
+    .style("color", "black")
     .append("svg")
         .attr("width", width_scatterplot + margin_scatterplot.left + margin_scatterplot.right)
         .attr("height", height_scatterplot + margin_scatterplot.top + margin_scatterplot.bottom)
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("transform",
             `translate(${margin_scatterplot.left}, ${margin_scatterplot.top})`);
 
-    d3.csv("mariokart-ratings.csv").then( function(data) {
+    d3.csv("data/mariokart-ratings.csv").then( function(data) {
 
         kart = data;
         kart.forEach(d => {
@@ -24,6 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 }
             }
+            d.isMarioKart = d.Title.includes("Mario Kart");
+
         });
 
     const x_scatterplot = d3.scaleTime()
@@ -45,6 +49,23 @@ document.addEventListener('DOMContentLoaded', function () {
     svg_scatterplot.append("g")
         .call(d3.axisLeft(y_scatterplot));
 
+    svg_scatterplot.append("text")
+        .attr("class", "x-label")
+        .attr("x", width_scatterplot / 2 + 40)
+        .attr("y", height_scatterplot + margin_scatterplot.bottom)
+        .attr("text-anchor", "end")
+        .style("fill", "black")
+        .text("Release Year")
+        
+    svg_scatterplot.append("text")
+        .attr("class", "y-label")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height_scatterplot / 2 + 50)
+        .attr("y", -30)
+        .attr("text-anchor", "end")
+        .style("fill", "black")
+        .text("Game Rating");
+
     const tooltip = d3.select("#div_scatterplot")
         .append("div")
         .style("position", "absolute")
@@ -56,18 +77,61 @@ document.addEventListener('DOMContentLoaded', function () {
         .style("border-width", "1px")
         .style("border-radius", "5px")
         .style("padding", "10px")
+        .style("color", "black")
+
+    const starSymbol = d3.symbol()
+        .type(d3.symbolStar)
+        .size(100);
 
     svg_scatterplot.append('g')
         .selectAll("dot")
-        .data(kart)
+        .data(kart.filter(d => !d.isMarioKart))
         .enter()
         .append("circle")
         .attr("cx", function (d) { return x_scatterplot(d.Year); } )
         .attr("cy", function (d) { return y_scatterplot(d.IMDb_Rating); } )
         .attr("r", 7)
         .style("fill", "red")
-        .style("opacity", 0.3)
-        .style("stroke", "white")
+        .style("opacity", 0.4)
+        .style("stroke", "black")
+        .on("mouseover", function(event, d) {
+            tooltip
+            .style("opacity", 1)
+            .style("visibility", "visible")
+    
+            d3.select(this)
+            .style("stroke", "white")
+            .style("opacity", 1)
+        })
+        .on("mousemove", function(event, d) {
+            const getYear = d3.timeFormat("%Y");
+            
+            tooltip
+            .html(`${d.Title}: ${getYear(d.Year)}`)
+            .style("left", (event.pageX + 10) + "px") 
+            .style("top", (event.pageY + 10) + "px")
+        })
+        .on("mouseleave",  function(event,d) {
+            tooltip
+            .transition()
+            .duration(200)
+            .style("opacity", 0)
+    
+            d3.select(this)
+            .style("stroke", "black")
+            .style("opacity", 0.3)
+        });
+
+        svg_scatterplot.append('g')
+        .selectAll("star")
+        .data(kart.filter(d => d.isMarioKart))
+        .enter()
+        .append("path")
+        .attr("d",starSymbol)
+        .attr("transform", d => `translate(${x_scatterplot(d.Year)},${y_scatterplot(d.IMDb_Rating)})`)
+        .style("fill", "gold")
+        .style("opacity", 0.6)
+        .style("stroke", "black")
         .on("mouseover", function(event, d) {
             tooltip
             .style("opacity", 1)
@@ -76,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
             d3.select(this)
             .style("stroke", "black")
             .style("opacity", 1)
-        } )
+        })
         .on("mousemove", function(event, d) {
             const getYear = d3.timeFormat("%Y");
             
@@ -84,18 +148,17 @@ document.addEventListener('DOMContentLoaded', function () {
             .html(`${d.Title}: ${getYear(d.Year)}`)
             .style("left", (event.pageX + 10) + "px") 
             .style("top", (event.pageY + 10) + "px")
-        } )
-        .on("mouseleave",  function(event,d) {
+        })
+        .on("mouseleave",  function() {
             tooltip
             .transition()
             .duration(200)
             .style("opacity", 0)
     
             d3.select(this)
-            .style("stroke", "none")
-            .style("opacity", 0.3)
-        } )
-
+            .style("stroke", "black")
+            .style("opacity", 0.6)
+        });
     });
 
 });

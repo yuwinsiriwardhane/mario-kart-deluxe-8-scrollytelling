@@ -36,7 +36,7 @@ var sankey = d3.sankey()
     .nodePadding(10)
     .size([width, height]);
 
-d3.json("weight-class.json").then( function(sankeydata) {
+d3.json("data/weight-class.json").then( function(sankeydata) {
     
   const graph = sankey(sankeydata);
 

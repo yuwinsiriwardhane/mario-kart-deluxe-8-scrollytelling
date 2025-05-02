@@ -2,7 +2,12 @@
 <html lang="en">
 
 <head>
-    <script src="https://d3js.org/d3.v7.min.js"></script>å
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script src="scripts/d3-sankey.min.js"></script>
+    <script src="scripts/history-chart.js"></script>
+    <script src="scripts/sankey-chart.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
@@ -27,11 +32,9 @@
     <div class="titleDiv">
         <h1 class="topTitle">Mario Kart 8: Game and Competitive Analysis</h1>
         <span class="authorsList">
-            Authors/Developers: Aidan, Luke, Nicholas, Ryan, Yuwin
+            Authors/Developers:<br>Aidan, Luke, Nicholas, Ryan, Yuwin
         </span>
-        <span>
-            Story Abstract:
-        </span>
+        <br>
         <span style="text-align: center; margin-top: 50px;">-INSERT another IMAGE-</span>
         <img src="marioRacing.jpg" class="img1">
         <img src="MK8DX_-_Bowser_artwork.jpg" class="img2">
@@ -45,19 +48,15 @@
             United States arcades began to rise in popularity from 1970 on. Many different gaming classics came from
             this era. You have some more niche games like Dragon's Lair and Street Fighter. And some all time classics
             like Pac-Man and Donkey Kong. Moving through the decades we come to an era of diversification in video
-            games. One of the many popular genres that takes center stage is the <strong>racing game</strong>. Over the
-            years many different racing games have held the crown as king over all others in the genre. For the arcade
+            games. One of the many popular genres that takes center stage is the <strong>racing game</strong>. 
+        </p>
+        <p class="standardParagraph">
+            Over the years many different racing games have held the crown as king over all others in the genre. For the arcade
             period mentioned previously the company "Sega" made games such as Outrun that flooded into arcades across
             the country. Moving to the start of the 21st century the "Need For Speed" franchise moved into homes
             allowing gamers to race from the comfort of there couch. However during this time a new racing game was
             being developed in Japan. This game series would change not only the racing game sphere but entirity of
             video games itself with its creative mechanics and likeability by all ages. This game is Mario Kart.
-        </p>
-        <p class="standardParagraph">
-            Back 50 years ago when the digital age was just beginning arcades ruled the gaming industry. All across the
-            United States arcades began to rise in popularity from 1970 on. Many different gaming classics came from
-            this era. You have some more niche games like Dragon's Lair and Street Fighter. And some all time classics
-            like Pac-Man and Donkey Kong.
         </p>
         <p class="introParagraph"></p>
     </div>
@@ -71,6 +70,9 @@
         <div class="salesDiv">
             <svg class="salesChart" id="salesChart"></svg>
             <button id="mergeSalesButton" class="mergeSalesButton" onclick="mergeSales()">Merge</button>
+        </div>
+        <div id="div_scatterplot">
+            <svg id="svg_scatterplot" width="980" height="730"></svg>
         </div>
     </div>
     <div class="mario-kart-game-play-mechanics-div">
