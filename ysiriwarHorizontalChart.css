@@ -1,58 +1,52 @@
-@font-face {
-    font-family: gamingFont;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
-}
-
-@font-face {
-    font-family: gamingFontStraight;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
-}
-
-@font-face {
-    font-family: gamingTechnoRace;
-    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
-}
-
-
 .ysiriwar_main_container {
     position: relative;
     display: block;
     margin: auto;
     width: 1660px;
-    padding-top: 20px;
     font-family: gamingFont;
-    transform: scale(1);
-    border: 5px solid rgb(255, 243, 243);
-    border-radius: 70px 20px 70px 20px;
-    background: linear-gradient(0.75turn, #03b0e9 0%, #b50100 20%, #000000 60%, #03b0e9 125%);
+    transform: scale(0.95);
+    margin-top: -50px;
+    /* padding-top: 20px; */
+    /* border: 5px solid rgb(255, 243, 243);
+    border-radius: 70px 20px 70px 20px; */
+    /* background: linear-gradient(0.75turn, #03b0e9 0%, #b50100 20%, #000000 60%, #03b0e9 125%); */
 
     .ysiriwar_heading_container {
-        width: 1000px;
+        width: 1275px;
         margin: auto;
         margin-bottom: 25px;
-        font-size: 45px;
+        font-size: 25px;
         font-family: gamingFont;
         text-align: center;
-        background: -webkit-linear-gradient(#9b2828 10%, #f0ed28 30%, #05b3f8 90%);
+        background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+        /* background: -webkit-linear-gradient(#9b2828 10%, #f0ed28 30%, #05b3f8 90%); */
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
 
     .ysiriwar_character_attr_container {
+        position: absolute;
         margin: auto;
+        left: 30px;
+        top: 170px;
         width: 1610px;
         height: 1000px;
         font-size: 45px;
         font-family: gamingFont;
-        border: 1px solid white;
+        border: 1px solid rgb(12, 9, 9);
+        z-index: -1;
         border-radius: 70px 20px 70px 20px;
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
+        background: #000000;
+        /* background: linear-gradient(0.75turn, #fcfeff 0%, #b50100 20%, #000000 50%, #f0f6f8 100%); */
 
         .ysiriwar_character_container {
             display: flex;
             flex-wrap: wrap;
             padding: 20px;
+            /* background: linear-gradient(0.75turn, #000000 0%, #b50100 20%, #000000 50%, #000000 100%); */
+
 
             .ysiriwar_character_img {
                 transition: transform 0.5s ease;
@@ -103,8 +97,9 @@
             height: 995px;
             position: absolute;
             z-index: -1;
-            opacity: 0.8;
+            opacity: 1;
             background-image: url(/images/ysiriwar/mushroom1.jpg);
+            
             background-size: cover;
             border: 3px solid #000000;
             border-radius: 50px 20px 70px 20px;

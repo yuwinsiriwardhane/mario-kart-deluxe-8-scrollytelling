@@ -1,21 +1,6 @@
-@font-face {
-    font-family: gamingFont;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
-}
-
-@font-face {
-    font-family: gamingFontStraight;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
-}
-
-@font-face {
-    font-family: gamingTechnoRace;
-    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
-}
-
 .ysiriwar_main_container {
 
-    .ysiriwar_select_type_control_panel{
+    .ysiriwar_select_type_control_panel {
         display: block;
         width: 1650px;
         margin-top: 20px;
@@ -26,19 +11,25 @@
             text-align: center;
             margin: auto;
             font-family: gamingFontStraight;
-            font-size: 25px;
+            font-size: 20px;
             color: white;
 
             label {
                 margin-right: 10px;
-                color: aliceblue;
+                background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
 
             .ysiriwar_select_type {
                 display: inline-block;
                 width: 290px;
-                font-size: 25px;
+                font-size: 20px;
                 cursor: pointer;
+                color: #5b6066;
+                border: 3px solid black;
+                border-radius: 20px 10px 20px 10px;
             }
         }
 
@@ -47,16 +38,18 @@
     .ysiriwar_kart_attr_container {
         visibility: hidden;
         position: absolute;
-        left: 20px;
-        top: 250px;
+        left: 30px;
+        top: 170px;
         width: 1610px;
         height: 1000px;
         font-size: 45px;
         font-family: gamingFont;
         opacity: 0;
-        border: 1px solid white;
+        border: 1px solid rgb(12, 9, 9);
         border-radius: 70px 20px 70px 20px;
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
+        background: #000000;
+        z-index: -1;
 
         .ysiriwar_kart_container {
             display: flex;
@@ -113,7 +106,7 @@
             height: 995px;
             position: absolute;
             z-index: -1;
-            opacity: 0.8;
+            opacity: 0.9;
             background-image: url(/images/ysiriwar/mario6.jpg);
             /* -webkit-transform: scaleX(-1);
             transform: scaleX(-1); */

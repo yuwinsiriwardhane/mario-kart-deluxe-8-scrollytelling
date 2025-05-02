@@ -10,41 +10,51 @@ Formated in this order
 Note: or just add them anywhere
 */
 
+@font-face {
+    font-family: gamingFont;
+    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
+}
+
+@font-face {
+    font-family: gamingFontStraight;
+    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
+}
+
+@font-face {
+    font-family: gamingTechnoRace;
+    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
+}
+
+body {
+    font-family: gamingFontStraight;
+    padding: 10px;
+}
+
 /* Title Div Styles */
-.titleDiv
-{
+.titleDiv {
     position: relative;
     display: grid;
     align-items: center;
     vertical-align: middle;
 }
-.introDiv
-{
+
+.introDiv {
     margin-top: 260px;
     display: grid;
     align-items: center;
     vertical-align: middle;
 }
-.historyDiv
-{
 
-}
-.marioKartDiv
-{
+.historyDiv {}
 
-}
-.competetiveDiv
-{
+.marioKartDiv {}
 
-}
+.competetiveDiv {}
 
 /* Intro Div Styles */
-.introTitle
-{
-    
-}
-.introParagraph
-{
+.introTitle {}
+
+.introParagraph {
     text-align: justify;
     margin-left: 240px;
     margin-right: 240px;
@@ -55,18 +65,17 @@ Note: or just add them anywhere
 }
 
 /* Title Div Styles */
-.topTitle
-{
-    font-family: "Poetsen One", sans-serif;
+.topTitle {
+    /* font-family: "Poetsen One", sans-serif; */
     font-weight: 400;
     font-style: normal;
     font-size: 58px;
 
     text-align: center;
 }
-.authorsList
-{
-    font-family: "Times New Roman", Times, serif;
+
+.authorsList {
+    /* font-family: "Times New Roman", Times, serif; */
     font-weight: 200;
     font-style: normal;
     font-size: 24px;
@@ -81,27 +90,29 @@ Note: or just add them anywhere
 /* Competetive Div Styles */
 
 /* Other Styles */
-.img1
-{
+.img1 {
     position: absolute;
-    width: 240px;
+    width: 375px;
     height: auto;
     top: 140px;
     left: 0px;
 }
-.img2
-{
+
+.img2 {
     position: absolute;
-    width: 240px;
+    width: 375px;
     height: auto;
     top: 140px;
     right: 0px;
 }
 
-h1, h2, h3, h4{
-    font-family: "Poetsen One", sans-serif;
+h1,
+h2,
+h3,
+h4 {
+    /* font-family: "Poetsen One", sans-serif; */
     font-weight: 100;
-
+    letter-spacing: 2px;
     text-align: center;
 }
 
@@ -109,8 +120,15 @@ p {
     text-align: justify;
     margin-left: 240px;
     margin-right: 240px;
-
     font-family: "Open Sans", sans-serif;
-    font-weight: 100;
+    font-size: 25px;
+    letter-spacing: 4px;
+    font-weight: 50;
     font-style: normal;
 }
+
+hr {
+    border: 2px solid #15181b;
+    border-radius: 5px;
+}
+
