@@ -46,7 +46,7 @@ let svgFirstDraw = true;
 document.addEventListener('DOMContentLoaded', function () {} )
 {
     // on load do data preprocess as well as draw
-    Promise.all([d3.csv('sales-all.csv'), d3.csv("track_wr.csv"), d3.csv("sales-combined.csv")])
+    Promise.all([d3.csv('/data/sales-all.csv'), d3.csv("/data/track_wr.csv"), d3.csv("/data/sales-combined.csv")])
         .then(function (values) {
             // have data loaded and look at values 
             
@@ -74,8 +74,8 @@ addEventListener("scroll", (event) => {});
 onscroll = (event) => {
     let barChart = document.getElementById("salesChart").getBoundingClientRect();
 
-    console.log(barChart.bottom)
-    console.log("window inner height " + (parseInt(window.innerHeight) - 200))
+    // console.log(barChart.bottom)
+    // console.log("window inner height " + (parseInt(window.innerHeight) - 200))
     // add scrolly events
     if((barChart.bottom <= (parseInt(window.innerHeight) - 200)) && svgFirstDraw)
     {
@@ -104,7 +104,7 @@ function backwardClickWr()
     updateLineChart()
 }
 
-function merge()
+function mergeSales()
 {
     if(salesCombined == 0)
     {
@@ -180,7 +180,7 @@ function barChartDrawInitial()
 
     svg1.append("text")
         .text("Sales per Game in Millions")
-        .attr("x", 260)
+        .attr("x", 270)
         .attr("y", 80)
         .attr("font-size", "32px")
         .attr("font-family", "Lobster, cursive")

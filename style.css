@@ -84,6 +84,11 @@ body {
 }
 
 /* History Div Styles */
+.historyDiv
+{
+    display: grid;
+    place-items: center;
+}
 
 /* Game Div Styles */
 

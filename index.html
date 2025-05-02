@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/styles/ysiriwarHorizontalKartChart.css">
     <link rel="stylesheet" href="/styles/ysiriwarHorizontalTiresChart.css">
     <link rel="stylesheet" href="/styles/ysiriwarHorizontalOverall.css">
+    <link rel="stylesheet" href="/styles/sales_wrTimes.css">
 </head>
 
 <body>
@@ -64,6 +65,13 @@
         <hr />
         <h1 class="historyTitle">A Comparison Over History</h1>
         <hr />
+        <p class="standardParagraph">
+            To get a better understanding of how prominent Mario Kart is as a racing game franchise it is easy to make a comparison. The simplist comparison is that of both to other games in the same genre of racing video games and that of comparisons to other Mario titles. For instance the below chart shows how dominant Mario Kart is when it comes to overall sales. 
+        </p>
+        <div class="salesDiv">
+            <svg class="salesChart" id="salesChart"></svg>
+            <button class="mergeSalesButton" onclick="mergeSales()"></button>
+        </div>
     </div>
     <div class="mario-kart-game-play-mechanics-div">
         <hr />
@@ -239,6 +247,11 @@
                 </ul>
             </div>
         </div>
+        <div>
+            <p>
+                From these different countries far and wide players compete in a variety of different ways. Some
+            </p>
+        </div>
     </div>
 </body>
 <script src="/scripts/ysiriwarMain.js" type="text/javascript"></script>
@@ -248,5 +261,7 @@
 <script src="/scripts/ysiriwarHorizontalTiresChart.js" type="text/javascript"></script>
 <script src="/scripts/ysiriwarHorizontalGlider.js" type="text/javascript"></script>
 <script src="/scripts/ysiriwarHorizontalOverall.js" type="text/javascript"></script>
+
+<script src="/scripts/sales-wrTimes.js"></script>
 
 </html>
