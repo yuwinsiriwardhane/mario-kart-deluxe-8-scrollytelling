@@ -66,6 +66,25 @@ body {
 }
 
 .introParagraph {
+}
+.marioKartDiv
+{
+
+}
+
+
+.competetiveDiv
+{
+
+}
+
+/* Intro Div Styles */
+.introTitle
+{
+    
+}
+.introParagraph
+{
     text-align: justify;
     margin-left: 240px;
     margin-right: 240px;
@@ -133,7 +152,7 @@ h4 {
     -webkit-text-fill-color: transparent;
 }
 
-p {
+p, li {
     text-align: justify;
     margin-left: 240px;
     margin-right: 240px;
