@@ -72,10 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {} )
 addEventListener("scroll", (event) => {});
 
 onscroll = (event) => {
-    let barChart = document.getElementById("")
+    let barChart = document.getElementById("salesChart").getBoundingClientRect();
 
+    console.log(barChart.bottom)
+    console.log("window inner height " + (parseInt(window.innerHeight) - 200))
     // add scrolly events
-    if(window.scrollY > 1000 && window.scrollY < 1200 & svgFirstDraw)
+    if((barChart.bottom <= (parseInt(window.innerHeight) - 200)) && svgFirstDraw)
     {
         barChartDrawBars()
         svgFirstDraw = false
@@ -178,8 +180,9 @@ function barChartDrawInitial()
 
     svg1.append("text")
         .text("Sales per Game in Millions")
-        .attr("x", 350)
+        .attr("x", 260)
         .attr("y", 80)
+        .attr("font-size", "32px")
         .attr("font-family", "Lobster, cursive")
 
     // draw scales
@@ -554,7 +557,7 @@ function updateLineChart()
         .transition()
         .duration(2000)
             .attr("fill", "none")
-            .attr("stroke", "lightgreen")
+            .attr("stroke", "rgb(212, 59, 59)")
             .attr("stroke-width", 4.5)
             .attr("class", "line2")
             .attr("d", d3.line()
