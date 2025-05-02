@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const svg_scatterplot = d3.select("#svg_scatterplot")
     .style("background-color", "black")
-    .style("color", "white")
+    .style("color", "#f7eed1")
     .append("svg")
         .attr("width", width_scatterplot + margin_scatterplot.left + margin_scatterplot.right)
         .attr("height", height_scatterplot + margin_scatterplot.top + margin_scatterplot.bottom)
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("x", width_scatterplot / 2 + 40)
         .attr("y", height_scatterplot + margin_scatterplot.bottom)
         .attr("text-anchor", "end")
-        .style("fill", "white")
+        .style("fill", "#f7eed1")
         .text("Release Year")
         
     svg_scatterplot.append("text")
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("x", -height_scatterplot / 2 + 50)
         .attr("y", -30)
         .attr("text-anchor", "end")
-        .style("fill", "white")
+        .style("fill", "#f7eed1")
         .text("Game Rating");
 
     const tooltip = d3.select("#div_scatterplot")
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr("y", 530)
             .text("Mario Kart Game")
             .style("font-size", "15px")
-            .style('fill', 'white')
+            .style('fill', '#f7eed1')
             .attr("alignment-baseline","middle")
 
             svg_scatterplot.append("text")
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr("y", 560)
             .text("Other Game")
             .style("font-size", "15px")
-            .style('fill', 'white')
+            .style('fill', '#f7eed1')
             .attr("alignment-baseline","middle");
 
     });
