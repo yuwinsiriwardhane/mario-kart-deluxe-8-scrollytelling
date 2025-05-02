@@ -164,7 +164,7 @@ function showInfo(datum) {
       text-align:center;
     ">
       <div style="background:${bgColor};padding:12px;">
-        <img src="itemIcons/${datum.item}.png" style="width:48px;height:48px;"/>
+        <img src="images/itemIcons/${datum.item}.png" style="width:48px;height:48px;"/>
       </div>
       <div style="background:white;padding:8px;font-size:1rem;">
         <strong>${name}</strong>
@@ -258,7 +258,7 @@ Promise.all(
         .attr("class","slice-icon")
         .attr("width",iconSize)
         .attr("height",iconSize)
-        .attr("href",d=>`itemIcons/${d.data.item}.png`)
+        .attr("href",d=>`images/itemIcons/${d.data.item}.png`)
         .attr("opacity",1)
         .attr("x",-iconSize/2)
         .attr("y",-iconSize/2)

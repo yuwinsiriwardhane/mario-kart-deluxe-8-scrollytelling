@@ -2,9 +2,9 @@
 // file by: Luke Dujmic
 
 //svg size portions
-const hsWidth = 700;
-const hsHeight = 700;
-const hsMargin = 100;
+const hsWidth = 725;
+const hsHeight = 725;
+const hsMargin = 110;
 const hsRadius = Math.min(hsWidth / 2, hsHeight / 2) - hsMargin;
 
 // the stats used from the csv file
@@ -47,8 +47,8 @@ function drawRadarGrid(levels = 5) {
   //for every stat add a name and its text position
   statKeys.forEach((key, i) => {
     const angle = angleSlice * i;
-    const x = (hsRadius + 40) * Math.cos(angle - Math.PI / 2);
-    const y = (hsRadius + 40) * Math.sin(angle - Math.PI / 2);
+    const x = (hsRadius + 50) * Math.cos(angle - Math.PI / 2);
+    const y = (hsRadius + 50) * Math.sin(angle - Math.PI / 2);
     hsSvg.append("line")
       .attr("x1", 0).attr("y1", 0)
       .attr("x2", x).attr("y2", y)
@@ -58,9 +58,10 @@ function drawRadarGrid(levels = 5) {
       .attr("x", x)
       .attr("y", y)
       .attr("text-anchor", "middle")
+      .attr("fill", "white")
       .style("font-size", "14px")
       //the name of the stat
-      .text(statMap[key]);
+      .text(statMap[key] + " (" + statMaxValues[key] + ")");
   });
 }
 
@@ -107,7 +108,7 @@ function drawRadar(data) {
       .attr("cy", d => d[1])
   );
 
-  d3.select("#charCardImg").attr("src", `characterIcons/${data.Driver}.png`);
+  d3.select("#charCardImg").attr("src", `images/characterIcons/${data.Driver}.png`);
   d3.select("#charCardName").text(data.Driver);
 }
 
@@ -144,7 +145,7 @@ function createCharacterGrid(data) {
           });
 
         td.append("img")
-          .attr("src", `characterIcons/${data[index].Driver}.png`)
+          .attr("src", `images/characterIcons/${data[index].Driver}.png`)
           .attr("alt", data[index].Driver)
           //max size also ensures consistency
           .style("max-width", "100px")
@@ -155,6 +156,17 @@ function createCharacterGrid(data) {
       }
     }
   }
+
+  //add text to explain some details
+  hsSvg.append("text")
+      .attr("x", 0)
+      .attr("y", 325)
+      .attr("text-anchor", "middle")
+      .attr("fill", "white")
+      .style("font-size", "12px")
+      .style("max-width", "100px")
+      //the name of the stat
+      .text("*Stats displayed are in the form: STATNAME (max value)");
 }
 
 // load the data and make it append to the stat values used for the spider chart

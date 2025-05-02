@@ -1,0 +1,70 @@
+/* Item distribution styles */
+#itemDistribution .pieChartArea{
+    margin: auto;
+    width: 1520px;    
+}
+#visualization {
+    background-color: black;
+    border-radius: 1em;
+    box-shadow: black 0em 0.5em 1em;
+}
+
+/* Hidden stats styles */
+
+
+#hiddenStats h1,h2,h3,h4,h5,h6 {
+text-align: center;
+}
+
+.hiddenStatDisplay {
+display: flex;
+justify-content: center;
+align-items: flex-start;
+gap: 40px;
+margin-top: 30px;
+background-color: black;
+padding: 1em;
+border-radius: 1em;
+box-shadow: black 0em 0.5em 1em;
+margin-bottom: 1em;
+}
+
+#charTable td {
+transition: 0.2s ease;
+}
+
+#chartWrapper {
+margin-top: 20px;
+}
+
+#statCard {
+text-align: center;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+padding: 10px;
+width: 180px;
+height: 180px;
+border-radius: 8px;
+background: white;
+margin: 0 auto 20px auto;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+background-color: rgb(35, 35, 35)
+}
+
+#charCardImg {
+max-width: 100px;
+max-height: 100px;
+margin-bottom: 10px;
+object-fit: contain;
+}
+
+#charCardName {
+font-size: 1.5em;
+color: white;
+}
+
+/*------------------*/
