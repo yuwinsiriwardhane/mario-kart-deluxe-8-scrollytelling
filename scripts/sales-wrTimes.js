@@ -78,7 +78,7 @@ onscroll = (event) => {
     // console.log(barChart.bottom)
     // console.log("window inner height " + (parseInt(window.innerHeight) - 200))
     // add scrolly events
-    if((barChart.bottom <= (parseInt(window.innerHeight) - 200)) && svgFirstDraw)
+    if((barChart.bottom <= (parseInt(window.innerHeight) - 100)) && svgFirstDraw)
     {
         barChartDrawBars()
         svgFirstDraw = false
