@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
         height_scatterplot = 700 - margin_scatterplot.top - margin_scatterplot.bottom;
 
     const svg_scatterplot = d3.select("#svg_scatterplot")
-    .style("background-color", "white")
-    .style("color", "black")
+    .style("background-color", "black")
+    .style("color", "white")
     .append("svg")
         .attr("width", width_scatterplot + margin_scatterplot.left + margin_scatterplot.right)
         .attr("height", height_scatterplot + margin_scatterplot.top + margin_scatterplot.bottom)
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("x", width_scatterplot / 2 + 40)
         .attr("y", height_scatterplot + margin_scatterplot.bottom)
         .attr("text-anchor", "end")
-        .style("fill", "black")
+        .style("fill", "white")
         .text("Release Year")
         
     svg_scatterplot.append("text")
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("x", -height_scatterplot / 2 + 50)
         .attr("y", -30)
         .attr("text-anchor", "end")
-        .style("fill", "black")
+        .style("fill", "white")
         .text("Game Rating");
 
     const tooltip = d3.select("#div_scatterplot")
@@ -72,12 +72,12 @@ document.addEventListener('DOMContentLoaded', function () {
         .style("visibility", "hidden")
         .style("opacity", 0)
         .attr("class", "tooltip")
-        .style("background-color", "white")
+        .style("background-color", "black")
         .style("border", "solid")
         .style("border-width", "1px")
         .style("border-radius", "5px")
         .style("padding", "10px")
-        .style("color", "black")
+        .style("color", "white")
 
     const starSymbol = d3.symbol()
         .type(d3.symbolStar)
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("r", 7)
         .style("fill", "red")
         .style("opacity", 0.4)
-        .style("stroke", "black")
+        .style("stroke", "white")
         .on("mouseover", function(event, d) {
             tooltip
             .style("opacity", 1)
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .style("opacity", 0)
     
             d3.select(this)
-            .style("stroke", "black")
+            .style("stroke", "white")
             .style("opacity", 0.3)
         });
 
@@ -131,14 +131,14 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("transform", d => `translate(${x_scatterplot(d.Year)},${y_scatterplot(d.IMDb_Rating)})`)
         .style("fill", "gold")
         .style("opacity", 0.6)
-        .style("stroke", "black")
+        .style("stroke", "white")
         .on("mouseover", function(event, d) {
             tooltip
             .style("opacity", 1)
             .style("visibility", "visible")
     
             d3.select(this)
-            .style("stroke", "black")
+            .style("stroke", "white")
             .style("opacity", 1)
         })
         .on("mousemove", function(event, d) {
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .style("opacity", 0)
     
             d3.select(this)
-            .style("stroke", "black")
+            .style("stroke", "white")
             .style("opacity", 0.6)
         });
 
@@ -167,8 +167,8 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr("y",515)
             .attr("width", 225)
             .attr("height", 60)
-            .style("fill", "rgb(221, 221, 221)")
-            .style('stroke', 'black')
+            .style("fill", "rgb(71, 71, 71)")
+            .style('stroke', 'white')
             .style('stroke-width', 1.5)
 
 
@@ -177,22 +177,21 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr("cy",558)
             .attr("r", 7)
             .style("fill", "red")
-            .style('stroke', 'black')
-            .style('stroke-width', 0.1)
+            .style('stroke', 'white')
 
 
             svg_scatterplot.append("path")
             .attr("d", starSymbol)
             .attr("transform", "translate(650,530)")
             .style("fill", "gold")
-            .style('stroke', 'black')
-            .style('stroke-width', 1.5)
+            .style('stroke', 'white')
 
             svg_scatterplot.append("text")
             .attr("x", 670)
             .attr("y", 530)
             .text("Mario Kart Game")
             .style("font-size", "15px")
+            .style('fill', 'white')
             .attr("alignment-baseline","middle")
 
             svg_scatterplot.append("text")
@@ -200,6 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .attr("y", 560)
             .text("Other Game")
             .style("font-size", "15px")
+            .style('fill', 'white')
             .attr("alignment-baseline","middle");
 
     });
