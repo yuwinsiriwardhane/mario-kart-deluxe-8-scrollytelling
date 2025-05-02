@@ -159,6 +159,49 @@ document.addEventListener('DOMContentLoaded', function () {
             .style("stroke", "black")
             .style("opacity", 0.6)
         });
+
+        const legend = svg_scatterplot.append("g")
+        .attr("class", "legend")
+            .append("rect")
+            .attr("x",625)
+            .attr("y",515)
+            .attr("width", 225)
+            .attr("height", 60)
+            .style("fill", "rgb(221, 221, 221)")
+            .style('stroke', 'black')
+            .style('stroke-width', 1.5)
+
+
+            svg_scatterplot.append("circle")
+            .attr("cx",650)
+            .attr("cy",558)
+            .attr("r", 7)
+            .style("fill", "red")
+            .style('stroke', 'black')
+            .style('stroke-width', 0.1)
+
+
+            svg_scatterplot.append("path")
+            .attr("d", starSymbol)
+            .attr("transform", "translate(650,530)")
+            .style("fill", "gold")
+            .style('stroke', 'black')
+            .style('stroke-width', 1.5)
+
+            svg_scatterplot.append("text")
+            .attr("x", 670)
+            .attr("y", 530)
+            .text("Mario Kart Game")
+            .style("font-size", "15px")
+            .attr("alignment-baseline","middle")
+
+            svg_scatterplot.append("text")
+            .attr("x", 670)
+            .attr("y", 560)
+            .text("Other Game")
+            .style("font-size", "15px")
+            .attr("alignment-baseline","middle");
+
     });
 
 });
