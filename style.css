@@ -48,6 +48,20 @@ body {
         top: 200px;
         left: 610px;
     }
+
+    #hiddenStatsExplanation {
+        li {
+            margin-top: 20px;
+            text-align: justify;
+            margin-left: 240px;
+            margin-right: 240px;
+            font-family: gamingFontStraight;
+            font-size: 25px;
+            letter-spacing: 4px;
+            font-weight: 50;
+            font-style: normal;
+        }
+    }
 }
 
 /* Title Div Styles */
@@ -73,9 +87,9 @@ body {
 }
 
 
-.competetiveDiv
+.competitiveDiv
 {
-
+    margin-top: -200px;
 }
 
 /* Intro Div Styles */
@@ -152,7 +166,7 @@ h4 {
     -webkit-text-fill-color: transparent;
 }
 
-p, li {
+p {
     text-align: justify;
     margin-left: 240px;
     margin-right: 240px;

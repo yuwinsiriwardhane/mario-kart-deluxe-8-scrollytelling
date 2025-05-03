@@ -5,7 +5,7 @@
     width: 1660px;
     font-family: gamingFont;
     transform: scale(0.95);
-    margin-top: -30px;
+    margin-top: -190px;
     /* padding-top: 20px; */
     /* border: 5px solid rgb(255, 243, 243);
     border-radius: 70px 20px 70px 20px; */
@@ -147,6 +147,7 @@
 }
 
 .ysiriwar_main_stats_explanation {
+    margin-top: 40px;
     display: block;
     background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
     background-clip: text;
