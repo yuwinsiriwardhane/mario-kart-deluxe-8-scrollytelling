@@ -112,18 +112,22 @@ const controls = leftCell.append("div")
 controls.append("label")
     .attr("for","placementSelect")
     .style("margin-right","8px")
+    .style("margin-top","18px")
     .text("Placement:");
 controls.append("select")
     .attr("id","placementSelect")
-    .classed("form-select me-4", true);
+    .classed("form-select me-4", true)
+    .style("margin-top","18px")
 controls.append("label")
     .attr("for","distanceSlider")
     .style("margin-right","8px")
+    .style("margin-top","18px")
     .text("Distance:");
 controls.append("input")
     .attr("type","range")
     .attr("id","distanceSlider")
-    .classed("form-range me-2", true);
+    .classed("form-range me-2", true)
+    .style("margin-top","18px");
 controls.append("span")
     .attr("id","distanceLabel")
     .style("min-width","3em");

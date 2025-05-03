@@ -172,6 +172,7 @@ body {
     }
 
     #itemExplanation {
+        margin-top: 30px;
         opacity: 0;
         transition: all 1s ease-in;
     }
