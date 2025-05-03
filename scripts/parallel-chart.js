@@ -25,7 +25,7 @@ async function createGraph() {
    * Array of Mario Kart combo objects, each representing a unique combination of driver, vehicle, tire, and glider.
    * @type {MarioKartCombo[]}
    */
-  const data = await d3.csv("MINIFIED.csv");
+  const data = await d3.csv("/data/MINIFIED.csv");
 
   // Parse numeric values
   data.forEach((d) => {
@@ -55,7 +55,7 @@ async function createGraph() {
   // Set dimensions and margins
   const margin = { top: 50, right: 150, bottom: 120, left: 80 },
     width = 1400 - margin.left - margin.right,
-    height = 1000 - margin.top - margin.bottom;
+    height = 800 - margin.top - margin.bottom;
 
   // Create SVG element
   const svg = d3
@@ -268,7 +268,7 @@ async function createGraph() {
     .attr("y", -15)
     .attr("dy", "0.71em")
     .text((d) => dimensionLabels[d])
-    .style("fill", "black")
+    .style("fill", "white")
     .style("font-weight", "bold")
     .style("font-size", "12px");
 
@@ -657,9 +657,6 @@ function createLeaderboardTable(
           .duration(100)
           .style("opacity", 1)
           .style("stroke-width", 4);
-
-        // Show tooltip for this combination
-        highlight(event, combo);
       })
       .on("mouseout", function () {
         // Remove highlight from row
@@ -671,9 +668,6 @@ function createLeaderboardTable(
           .duration(200)
           .style("opacity", 0.7)
           .style("stroke-width", 1.8);
-
-        // Hide tooltip
-        noHighlight();
       });
 
     // Add rank cell with colored indicator
