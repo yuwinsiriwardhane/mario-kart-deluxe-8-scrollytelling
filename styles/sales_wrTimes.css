@@ -1,64 +1,87 @@
-.header
-{
+.header {
     width: 100%;
     justify-content: center;
     text-justify: center;
     text-align: center;
 }
 
-.text1
-{
+.text1 {
     width: 100%;
     justify-content: center;
     text-justify: center;
     text-align: center;
 }
-.vis1div
-{
+
+.vis1div {
     height: 600px;
 }
-.vis2div
-{
+
+.vis2div {
     height: 700px;
 }
 
-.salesDiv
-{
 
-}
-.salesChart
-{
+.salesChart {
     align-items: center;
     width: 750px;
     height: 550px;
 }
 
-.wrChart
-{
+.wrChart {
     align-items: center;
     width: 700px;
     height: 600px;
 }
 
-.mergeSalesButton
-{
+.mergeSalesButton {
     width: 140px;
     height: 60px;
     border-bottom-right-radius: 27px;
     box-shadow: 2px 2px 5px
 }
 
-.mergeSalesButton:hover 
-{
+.mergeSalesButton:hover {
     opacity: 0.6;
 }
 
-.mergeSalesButton:active 
-{
+.mergeSalesButton:active {
     opacity: 0.4
 }
 
 .salesDiv {
+    opacity: 0;
     width: 900px;
     margin: auto;
+    transition: all 1s ease-in;
+}
+
+.salesDiv.fade-in {
+    opacity: 1;
+}
+
+.comp_explanation_para {
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+.comp_explanation_para.fade-in {
+    opacity: 1;
+}
+
+.wrChartDiv {
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+.wrChartDiv.fade-in {
+    opacity: 1;
+}
+
+.world_record_explanation {
+    opacity: 0;
+    transition: all 1s ease-in;
+}
+
+.world_record_explanation.fade-in {
+    opacity: 1;
 }

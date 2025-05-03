@@ -29,6 +29,8 @@
         width: 1000px;
         margin: auto;
         margin-top: 20px;
+        opacity: 0;
+        transition: all 1s ease-in;
 
         .ysiriwar_select_season_control {
             width: 600px;
@@ -65,6 +67,8 @@
         border: 5px solid black;
         border-radius: 70px 20px 70px 20px;
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
+        opacity: 0;
+        transition: all 1s ease-in;
 
         .ysiriwar_worldmap_mk_background {
             display: block;
@@ -139,6 +143,10 @@
         }
     }
 
+    .ysiriwar_worldmap_svg_container.fade-in {
+        opacity: 1;
+    }
+
     .ysiriwar_info_container {
         width: 1000px;
         margin: auto;
@@ -153,6 +161,8 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        opacity: 0;
+        transition: all 1s ease-in;
 
         strong {
             margin-right: 20px;
@@ -173,6 +183,14 @@
             cursor: default;
             transform: scale(1.2);
         }
+    }
+
+    .ysiriwar_info_container.fade-in {
+        opacity: 1;
+    }
+
+    .ysiriwar_control_panel_container.fade-in {
+        opacity: 1;
     }
 }
 
