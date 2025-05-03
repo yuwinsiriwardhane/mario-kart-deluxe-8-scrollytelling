@@ -10,4 +10,10 @@
   margin: 60px auto;
   color: white;
   fill: white;
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+.bargraph_svg_container.fade-in {
+  opacity: 1;
 }

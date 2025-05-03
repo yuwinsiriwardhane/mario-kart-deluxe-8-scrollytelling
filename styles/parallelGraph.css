@@ -11,6 +11,8 @@
   margin: 60px auto;
   color: white;
   fill: white;
+  opacity: 0;
+  transition: all 1s ease-in;
 
   & svg {
     overflow: visible;
@@ -21,4 +23,8 @@
     fill: black;
     letter-spacing: 0.1em;
   }
+}
+
+.parallel_svg_container.fade-in {
+  opacity: 1;
 }

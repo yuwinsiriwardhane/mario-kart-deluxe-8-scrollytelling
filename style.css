@@ -142,6 +142,10 @@ body {
     }
 
     #hiddenStatsExplanation {
+        opacity: 0;
+        transition: all 1s ease-in;
+        margin-top: 50px;
+
         li {
             margin-top: 20px;
             text-align: justify;
@@ -153,6 +157,28 @@ body {
             font-weight: 50;
             font-style: normal;
         }
+    }
+
+    #hiddenStatsExplanation.fade-in {
+        opacity: 1;
+    }
+
+    #itemDistribution {
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+
+    #itemDistribution.fade-in {
+        opacity: 1;
+    }
+
+    #itemExplanation {
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+
+    #itemExplanation.fade-in {
+        opacity: 1
     }
 }
 

@@ -95,6 +95,31 @@ document.addEventListener("DOMContentLoaded", () => {
         .setClassToggle(".ysiriwar_overall_attr_container ", "fade-in")
     // .addIndicators()
 
+    const gamePlayMechanicsHiddenStatsExpScene = new ScrollMagic.Scene({
+        triggerElement: "#hiddenStatsExplanation ",
+        triggerHook: 0.7
+    })
+        .setClassToggle("#hiddenStatsExplanation ", "fade-in")
+
+    const gamePlayMechanicsItemDistExpScene = new ScrollMagic.Scene({
+        triggerElement: "#itemExplanation ",
+        triggerHook: 0.7
+    })
+        .setClassToggle("#itemExplanation ", "fade-in")
+
+    const gamePlayMechanicsItemDistPieChartScene = new ScrollMagic.Scene({
+        triggerElement: "#itemDistribution ",
+        triggerHook: 0.7
+    })
+        .setClassToggle("#itemDistribution ", "fade-in")
+
+    const gamePlayMechanicsParallelChartExpScene = new ScrollMagic.Scene({
+        triggerElement: ".parallel_svg_container ",
+        triggerHook: 0.7
+    })
+        .setClassToggle(".parallel_svg_container ", "fade-in")
+    // .addIndicators()
+
     //------------------- GAME PLAY MECHANICS DIV -----------------------------------
 
     //------------------- COMPETETIVE DIV MECHANICS DIV -----------------------------------
@@ -165,12 +190,24 @@ document.addEventListener("DOMContentLoaded", () => {
     //     name: "competetiveDivWorldRecordExpParaScene"
     // });
 
+    const competetiveDivCountryDistBarChartParaScene = new ScrollMagic.Scene({
+        triggerElement: ".bargraph_svg_container",
+        triggerHook: 0.6
+    })
+        .setClassToggle(".bargraph_svg_container", "fade-in")
+    // .addIndicators({
+    //     name: "competetiveDivWorldRecordExpParaScene"
+    // });
+
     //------------------- COMPETETIVE MECHANICS DIV -----------------------------------
 
 
     controller.addScene([titleDivScene, introParaScene, hsitoryDivScene, historyDivScatterPlotScene, historyDivBarPlotScene,
         gamePlayMechanicsScene, gamePlayMechanicsCharacterControlPanelScene, gamePlayMechanicsCharacterScene, gamePlayMechanicsCharacterHeadingScene,
         gamePlayMechanicsKartScene, gamePlayMechanicsTireScene, gamePlayMechanicsGliderScene, gamePlayMechanicsOverallScene,
+        gamePlayMechanicsHiddenStatsExpScene, gamePlayMechanicsParallelChartExpScene,
+        gamePlayMechanicsItemDistExpScene, gamePlayMechanicsItemDistPieChartScene,
         competetiveDivScene, competetiveDivWorldMapControlPanelScene, competetiveDivWorldMapScene,
-        competetiveDivWorldMapInfoScene, competetiveDivExplParaScene, competetiveDivWorldRecordChartScene, competetiveDivWorldRecordExpParaScene])
+        competetiveDivWorldMapInfoScene, competetiveDivExplParaScene, competetiveDivWorldRecordChartScene,
+        competetiveDivWorldRecordExpParaScene, competetiveDivCountryDistBarChartParaScene])
 })
