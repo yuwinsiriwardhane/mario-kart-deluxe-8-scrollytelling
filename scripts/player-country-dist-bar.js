@@ -21,8 +21,8 @@ async function createGraph() {
    */
   const data = await d3.json("/country-dist.json");
   const margin = { top: 50, right: 30, bottom: 90, left: 60 },
-    width = 1400 - margin.left - margin.right,
-    height = 1000 - margin.top - margin.bottom;
+    width = 1200 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
 
   const svg = d3
     .select("#svg_bar_graph")

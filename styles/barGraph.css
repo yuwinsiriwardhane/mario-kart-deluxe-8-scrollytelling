@@ -1,0 +1,13 @@
+.bargraph_svg_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: black 0em 0.5em 1em;
+  width: 1200px;
+  margin: 60px auto;
+  color: white;
+  fill: white;
+}
