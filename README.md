@@ -2,7 +2,7 @@ CSE 578 Project - Spring 2025 - Group 3 <br><br>
 
 Students: Nicholas Mitch, Aidan Labourdette, Luke Dujmic, Yuwin Siriwardhanange, Ryan Pettinato <br>
 
-Usage for graders/teacher:
+<strong>Usage for graders/teacher: </strong> <br>
 Simply do the open live server on "index.html" file in the home folder. You should then be able to navigate the page and look at the scrolly telling story <br>
 
 <strong>Overview of Story</strong> <br>
