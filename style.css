@@ -36,17 +36,109 @@ body {
     width: 2000px;
     margin: auto;
 
-    #div_scatterplot {
-        width: 1000px;
-        margin: auto;
+    .topTitle {
+        font-size: 45px;
     }
 
-    .img-title {
-        position: absolute;
-        width: 800px;
-        height: auto;
-        top: 200px;
-        left: 610px;
+    .titleDiv {
+        display: block;
+        position: relative;
+        z-index: 10;
+        height: 550px;
+        opacity: 0;
+        transition: all 1s ease-in;
+
+        .img-title {
+            position: absolute;
+            width: 800px;
+            height: auto;
+            top: 200px;
+            left: 610px;
+        }
+
+        .img1 {
+            position: absolute;
+            width: 375px;
+            height: auto;
+            top: 170px;
+            left: 0px;
+        }
+
+        .img2 {
+            position: absolute;
+            width: 375px;
+            height: auto;
+            top: 170px;
+            right: 0px;
+        }
+
+        .authorsList {
+            display: block;
+            margin-top: 20px;
+            font-style: normal;
+            font-size: 24px;
+            text-align: center;
+            background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .titleDiv.fade-in {
+        opacity: 1;
+    }
+
+    .introDiv {
+        .standardParagraph {
+            opacity: 0;
+            transition: all 1s ease-in;
+        }
+
+        .standardParagraph.fade-in {
+            opacity: 1;
+        }
+    }
+
+
+    .historyDiv {
+        display: grid;
+        opacity: 0;
+        transition: all 1s ease-in;
+
+        #div_scatterplot {
+            opacity: 0;
+            width: 1000px;
+            margin: auto;
+            transition: all 1s ease-in;
+        }
+
+        #div_scatterplot.fade-in {
+            opacity: 1;
+        }
+    }
+
+    .historyDiv.fade-in {
+        opacity: 1;
+    }
+
+    .mario-kart-game-play-mechanics-div {
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+
+    .mario-kart-game-play-mechanics-div.fade-in {
+        opacity: 1;
+    }
+
+    .competitiveDiv {
+        margin-top: -500px;
+        opacity: 0;
+        transition: all 1s ease-in;
+    }
+
+    .competitiveDiv.fade-in {
+        opacity: 1;
     }
 
     #hiddenStatsExplanation {
@@ -64,94 +156,9 @@ body {
     }
 }
 
-/* Title Div Styles */
-.titleDiv {
-    position: relative;
-    display: grid;
-    align-items: center;
-    vertical-align: middle;
-}
-
-.introDiv {
-    margin-top: 320px;
-    display: grid;
-    align-items: center;
-    vertical-align: middle;
-}
-
-.introParagraph {
-}
-.marioKartDiv
-{
-
-}
-
-
-.competitiveDiv
-{
-    margin-top: -200px;
-}
-
-/* Intro Div Styles */
-.introTitle
-{
-    
-}
-.introParagraph
-{
-    text-align: justify;
-    margin-left: 240px;
-    margin-right: 240px;
-    font-family: "Open Sans", sans-serif;
-    font-style: normal;
-}
-
-/* Title Div Styles */
-.topTitle {
-    font-style: normal;
-    font-size: 58px;
-    text-align: center;
-}
-
-.authorsList {
-    margin-top: 20px;
-    font-style: normal;
-    font-size: 24px;
-    text-align: center;
-    background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* History Div Styles */
-.historyDiv {
-    display: grid;
-}
-
-/* Game Div Styles */
-
-/* Competetive Div Styles */
 .wrChartDiv {
     display: grid;
     place-items: center;
-}
-
-/* Other Styles */
-.img1 {
-    position: absolute;
-    width: 375px;
-    height: auto;
-    top: 140px;
-    left: 0px;
-}
-
-.img2 {
-    position: absolute;
-    width: 375px;
-    height: auto;
-    top: 140px;
-    right: 0px;
 }
 
 h1,
@@ -181,6 +188,8 @@ p {
 }
 
 hr {
-    border: 2px solid #15181b;
+    position: relative;
+    border: 2px solid #5b6066;
     border-radius: 5px;
+    z-index: -1;
 }

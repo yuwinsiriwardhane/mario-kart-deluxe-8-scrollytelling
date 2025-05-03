@@ -14,6 +14,8 @@
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
         background: #000000;
         z-index: -1;
+        opacity: 0;
+        transition: all 1s ease-in;
 
         .ysiriwar_overall_container {
             height: 1000px;
@@ -94,6 +96,10 @@
                 }
             }
         }
+    }
+
+    .ysiriwar_overall_attr_container.fade-in {
+        opacity: 1;
     }
 
     .active {

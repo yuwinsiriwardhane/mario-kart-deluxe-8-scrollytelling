@@ -416,7 +416,9 @@
                 <img class="tooltip_image" src="/images/France.png" />
                 <strong class="ysiriwar_tooltip_player_count"> </strong>
                 <label class="ysiriwar_included_ranks_label">Included Ranks: 🏆</label>
-                <ul class="ysiriwar_rank_list"> <li>test</li> </ul>
+                <ul class="ysiriwar_rank_list">
+                    <li>test</li>
+                </ul>
             </div>
             <hr />
             <h1 class="compTitle">Competetive Scene</h1>
@@ -499,29 +501,41 @@
                         <button onclick="forwardClickWr()">Next Track</button>
                     </div>
                 </div>
-                <p style="margin-top: 20px;">
-                    The most obvious standout feature about all of these graphs is the large drop from the first
-                    world record times to the 4th or 5th world record times. When a game like this first releases
-                    the time trial world record times are highly volatile. This is because of two reasons...
-                <p style="display: grid; place-items: center; text-align: center;">
-                    <br> 1&#41; No one has played the game and everyone is still figuring out the feel for the game
-                    <br> 2&#41; People attempt to get the world record with sub-optimal gameplay as quickly as
-                    possible so they can get there names on the leaderboards.
-                </p>
-                <p>
-                    You may also notice that the graphs look like a jagged staircase. One of the most important
-                    concepts in time-trial based competetion in video games are discoveries. Discoveries of things
-                    like new driving techniques or ways to skip part of the track allow for big chunks of time save
-                    that is not possible from micro managing your driving. A good metaphor to explain this would be
-                    the progression of bronze tools to iron tools. Sure the bronze tools still work but there is an
-                    obvious advantage to using the iron tools. This advantage often changes the route for the track
-                    and forces everyone who is aiming to achieve a world record time to either adapt to the new
-                    strategy or be left behind.
-                </p>
-                </p>
+                <div class="world_record_explanation">
+                    <p style="margin-top: 20px;">
+                        The most obvious standout feature about all of these graphs is the large drop from the first
+                        world
+                        record times to the 4th or 5th world record times. When a game like this first releases the time
+                        trial world record times are highly volatile. This is because of two reasons... </p>
+                    <p style="margin-top: 20px;">
+                        <strong>1&#41; No one has played the game and everyone is still figuring out the feel for the
+                            game. </strong>
+                    </p>
+                    <p style="margin-top: 20px;">
+                        <strong>2&#41; People attempt to get the world record with sub-optimal gameplay as quickly as
+                            possible so
+                            they can get there names on the leaderboards. </strong>
+                    </p>
+                    <p style="margin-top: 20px;">
+                        You may also notice that the graphs look like a jagged staircase. One of the most important
+                        concepts
+                        in time-trial based competetion in video games are discoveries. Discoveries of things like new
+                        driving techniques or ways to skip part of the track allow for big chunks of time save that is
+                        not
+                        possible from micro managing your driving. A good metaphor to explain this would be the
+                        progression
+                        of bronze tools to iron tools. Sure the bronze tools still work but there is an obvious
+                        advantage to
+                        using the iron tools. This advantage often changes the route for the track and forces everyone
+                        who
+                        is aiming to achieve a world record time to either adapt to the new strategy or be left behind.
+                    </p>
+                </div>
             </div>
         </div>
 </body>
+
+<script src="/main.js" type="text/javascript"></script>
 <script src="/scripts/ysiriwarMain.js" type="text/javascript"></script>
 <script src="/scripts/ysiriwarWorldMap.js" type="text/javascript"></script>
 <script src="/scripts/ysiriwarHorizontalChart.js" type="text/javascript"></script>
@@ -534,5 +548,12 @@
 <script src="scripts/itemDistribution.js"></script>
 <script src="scripts/hiddenStats.js"></script>
 <script src="/scripts/sales-wrTimes.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+    integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"
+    integrity="sha512-RvUydNGlqYJapy0t4AH8hDv/It+zKsv4wOQGb+iOnEfa6NnF2fzjXgRy+FDjSpMfC3sjokNUzsfYZaZ8QAwIxg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </html>

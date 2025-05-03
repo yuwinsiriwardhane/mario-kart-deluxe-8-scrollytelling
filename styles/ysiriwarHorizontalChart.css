@@ -4,8 +4,8 @@
     margin: auto;
     width: 1660px;
     font-family: gamingFont;
-    transform: scale(0.95);
-    margin-top: -190px;
+    transform: scale(0.9);
+    margin-top: -525px;
     /* padding-top: 20px; */
     /* border: 5px solid rgb(255, 243, 243);
     border-radius: 70px 20px 70px 20px; */
@@ -23,6 +23,8 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        opacity: 0;
+        transition: all 1s ease-in;
     }
 
     .ysiriwar_character_attr_container {
@@ -39,6 +41,8 @@
         border-radius: 70px 20px 70px 20px;
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
         background: #000000;
+        opacity: 0;
+        transition: all 1s ease-in;
         /* background: linear-gradient(0.75turn, #fcfeff 0%, #b50100 20%, #000000 50%, #f0f6f8 100%); */
 
         .ysiriwar_character_container {
@@ -126,6 +130,14 @@
         }
     }
 
+    .ysiriwar_heading_container.fade-in {
+        opacity: 1;
+    }
+
+    .ysiriwar_character_attr_container.fade-in {
+        opacity: 1;
+    }
+
     .active {
         transform: scale(1.5);
     }
@@ -147,7 +159,6 @@
 }
 
 .ysiriwar_main_stats_explanation {
-    margin-top: 40px;
     display: block;
     background: -webkit-linear-gradient(#b50100 10%, #000000 30%, #b50100 100%);
     background-clip: text;

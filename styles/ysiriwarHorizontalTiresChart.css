@@ -1,18 +1,3 @@
-/* @font-face {
-    font-family: gamingFont;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
-}
-
-@font-face {
-    font-family: gamingFontStraight;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
-}
-
-@font-face {
-    font-family: gamingTechnoRace;
-    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
-} */
-
 .ysiriwar_main_container {
 
     .ysiriwar_tire_attr_container {
@@ -30,6 +15,8 @@
         box-shadow: 7px 5px 5px rgb(10, 9, 9);
         background: #000000;
         z-index: -1;
+        opacity: 0;
+        transition: all 1s ease-in;
 
         .ysiriwar_tire_container {
             display: flex;
@@ -114,6 +101,10 @@
                 margin-right: auto;
             }
         }
+    }
+
+    .ysiriwar_tire_attr_container.fade-in {
+        opacity: 1;
     }
 
     .active {
