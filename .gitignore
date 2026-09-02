@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# VS Code
+.vscode/
+
+# macOS metadata
+.AppleDouble
+.LSOverride
+._*
+
+# Thumbnails
+.Icon?
