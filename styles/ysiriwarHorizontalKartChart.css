@@ -53,6 +53,7 @@
         background: #000000;
         z-index: -1;
         opacity: 0;
+        transform: scale(0.9);
         transition: all 1s ease-in;
 
         .ysiriwar_kart_container {

@@ -43,6 +43,7 @@
         background: #000000;
         opacity: 0;
         transition: all 1s ease-in;
+        transform: scale(0.9);
         /* background: linear-gradient(0.75turn, #fcfeff 0%, #b50100 20%, #000000 50%, #f0f6f8 100%); */
 
         .ysiriwar_character_container {
