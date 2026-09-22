@@ -115,7 +115,7 @@ const ysiriwarDrawGliderHorizontalChart = () => {
 const ysiriwarWrangleGliderDataset = (dataset) => {
     ysiriwarGliderDataset = dataset.map((item) => {
         let newObj = {
-            "image": `../images/ysiriwar/gliders/${item["Body"].split(" ").join("")}.webp`,
+            "image": `./images/ysiriwar/gliders/${item["Body"].split(" ").join("")}.webp`,
             "glider": item["Body"],
             "acceleration": item["Acceleration"],
             "groundSpeed": item["Ground Speed"],

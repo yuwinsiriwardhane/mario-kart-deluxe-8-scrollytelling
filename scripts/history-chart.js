@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .attr("transform",
             `translate(${margin_scatterplot.left}, ${margin_scatterplot.top})`);
 
-    d3.csv("../data/mariokart-ratings.csv").then( function(data) {
+    d3.csv("./data/mariokart-ratings.csv").then( function(data) {
 
         kart = data;
         kart.forEach(d => {

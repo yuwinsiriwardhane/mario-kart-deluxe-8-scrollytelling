@@ -114,7 +114,7 @@ const ysiriwarDrawHorizontalChart = () => {
 const wrangleCharacterDataset = (dataset) => {
     characterDataset = dataset.map((item) => {
         let newObj = {
-            "image": `../images/ysiriwar/characters/${item["Driver"]}.webp`,
+            "image": `./images/ysiriwar/characters/${item["Driver"]}.webp`,
             "driver": item["Driver"],
             "acceleration": item["Acceleration"],
             "groundSpeed": item["Ground Speed"],

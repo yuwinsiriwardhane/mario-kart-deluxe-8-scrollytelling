@@ -25,7 +25,7 @@ async function createGraph() {
    * Array of Mario Kart combo objects, each representing a unique combination of driver, vehicle, tire, and glider.
    * @type {MarioKartCombo[]}
    */
-  const data = await d3.csv("/data/MINIFIED.csv");
+  const data = await d3.csv("./data/MINIFIED.csv");
 
   // Parse numeric values
   data.forEach((d) => {

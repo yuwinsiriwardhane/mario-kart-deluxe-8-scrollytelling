@@ -648,7 +648,7 @@ function updateLineChart()
         .join(
             enter => enter.append("image")
                 .attr("class", "image1")
-                .attr("href", function(d) {return "../track_pngs/" + d})
+                .attr("href", function(d) {return "./track_pngs/" + d})
                 .attr("x", 0)
                 .attr("y", 120)
                 .attr("width", 200)
@@ -661,7 +661,7 @@ function updateLineChart()
                 .transition()
                 .duration(1000)
                 .attr("class", "image1")
-                .attr("href", function(d) {return "../track_pngs/" + d})
+                .attr("href", function(d) {return "./track_pngs/" + d})
                 .attrTween("x", function() {
                     let origin = 350
                     return function(t) {

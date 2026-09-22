@@ -34,7 +34,7 @@ const drawSelectedSeasonText = () => {
         .attr("opacity", 0.9);
 
     seasonImage.selectAll("image")
-        .data(["../images/ysiriwar/items/StarMK8.webp","../images/ysiriwar/items/BulletBillMK8.webp"])
+        .data(["./images/ysiriwar/items/StarMK8.webp", "./images/ysiriwar/items/BulletBillMK8.webp"])
         .join(
             (enter) =>
                 enter
@@ -445,7 +445,7 @@ const wrangleMapData = () => {
 }
 
 const importLeaderboardDataset = () => {
-    d3.csv("../data/MK8_Leaderboard_Data.csv").then(data => {
+    d3.csv("./data/MK8_Leaderboard_Data.csv").then(data => {
         console.log("importLeaderboardDataset => ", data);
         leaderboardDataset = wrangleLeaderboardDataset(data);
     });
@@ -473,7 +473,7 @@ const wrangleLeaderboardDataset = (dataset) => {
 }
 
 const getCountryFlag = (countryName) => {
-    return `../images/ysiriwar/${countryName}.png`
+    return `./images/ysiriwar/${countryName}.png`
 }
 
 const populateSeasonSelectBox = () => {
