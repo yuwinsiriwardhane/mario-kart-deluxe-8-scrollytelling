@@ -63,11 +63,23 @@ Statistics visualized include:
 
 Multiple interconnected D3.js visualizations update dynamically as users experiment with different racer combinations.
 
+![Characters Statistics](./images/readme/MK-Characters.png)
+
+![Karts Statistics](./images/readme/MK-Karts.png)
+
+![Tires Statistics](./images/readme/MK-Tires.png)
+
+![Gliders Statistics](./images/readme/MK-Gliders.png)
+
+![Overall Statistics](./images/readme/MK-Overall-Build.png)
+
 ### Competitive Player Distribution
 
 An interactive geographic visualization displays the country distribution of top competitive Mario Kart players across multiple online seasons.
 
 Users can filter the visualization by season to explore changes in the geographic distribution of competitive players.
+
+![GeoSpatial](./images/readme/MK-Geo-Spatial.png)
 
 ### Interactive Data Exploration
 
