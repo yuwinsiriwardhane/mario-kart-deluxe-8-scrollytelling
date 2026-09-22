@@ -12,17 +12,17 @@ Note: or just add them anywhere
 
 @font-face {
     font-family: gamingFont;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
+    src: url(./fonts/venite-adoremus-font/VeniteAdoremus-rgRBA.ttf);
 }
 
 @font-face {
     font-family: gamingFontStraight;
-    src: url(/fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
+    src: url(./fonts/venite-adoremus-font/VeniteAdoremusStraight-Yzo6v.ttf);
 }
 
 @font-face {
     font-family: gamingTechnoRace;
-    src: url(/fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
+    src: url(./fonts/techno-race-italic-font/TechnoRaceItalic-eZRWe.otf);
 }
 
 body {
