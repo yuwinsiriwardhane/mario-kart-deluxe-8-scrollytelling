@@ -6,7 +6,7 @@ Developed as a five-person team project for **CSE 578: Data Visualization at Ari
 
 ## Live Demo
 
-**[Explore the Interactive Visualization](https://yuwinsiriwardhane.github.io/mario-kart-deluxe-8-scrollytelling/)**
+**Best viewed on desktop. This visualization was designed for a desktop scrollytelling experience. [Explore the Interactive Visualization](https://yuwinsiriwardhane.github.io/mario-kart-deluxe-8-scrollytelling/)**
 
 ---
 
