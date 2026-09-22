@@ -97,7 +97,7 @@ The project incorporates several interaction techniques across its visualization
 
 ## My Contributions
 
-My primary responsibilities focused on the **gameplay mechanics**, **competitive visualization**, and final application integration.
+This project was developed by a five-person team. The visualizations showcased above were designed and implemented by me. My primary responsibilities focused on the **gameplay mechanics**, **competitive visualization**, and final application integration.
 
 ### Custom Racer Configuration Visualization
 
