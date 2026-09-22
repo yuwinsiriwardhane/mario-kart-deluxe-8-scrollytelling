@@ -19,7 +19,7 @@ async function createGraph() {
    * Array containing player distribution data across multiple seasons
    * @type {SeasonData[]}
    */
-  const data = await d3.json("./data/country-dist.json");
+  const data = await d3.json("../data/country-dist.json");
   const margin = { top: 50, right: 30, bottom: 90, left: 60 },
     width = 1200 - margin.left - margin.right,
     height = 800 - margin.top - margin.bottom;

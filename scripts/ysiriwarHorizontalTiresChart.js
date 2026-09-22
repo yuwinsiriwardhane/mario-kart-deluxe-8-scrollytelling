@@ -115,7 +115,7 @@ const ysiriwarDrawTireHorizontalChart = () => {
 const ysiriwarWrangleTireDataset = (dataset) => {
     ysiriwarTireDataset = dataset.map((item) => {
         let newObj = {
-            "image": `./images/ysiriwar/tires/${item["Body"].split(" ").join("")}.webp`,
+            "image": `../images/ysiriwar/tires/${item["Body"].split(" ").join("")}.webp`,
             "tire": item["Body"],
             "acceleration": item["Acceleration"],
             "groundSpeed": item["Ground Speed"],
