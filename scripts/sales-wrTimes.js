@@ -47,7 +47,7 @@ let svgFirstDraw = true;
 document.addEventListener('DOMContentLoaded', function () {} )
 {
     // on load do data preprocess as well as draw
-    Promise.all([d3.csv('/data/sales-all.csv'), d3.csv("/data/track_wr.csv"), d3.csv("/data/sales-combined.csv")])
+    Promise.all([d3.csv('./data/sales-all.csv'), d3.csv("./data/track_wr.csv"), d3.csv("./data/sales-combined.csv")])
         .then(function (values) {
             // have data loaded and look at values 
             
@@ -470,7 +470,7 @@ function initialWrTimesDraw()
 
     svg2.append("image")
         .attr("class", "background")
-        .attr("href", function(d) {return "chart_backgrounds/wrBackground2.PNG"})
+        .attr("href", function(d) {return "./chart_backgrounds/wrBackground2.PNG"})
         .attr("x", 120)
         .attr("y", 120)
         .attr("width", 400)
@@ -648,7 +648,7 @@ function updateLineChart()
         .join(
             enter => enter.append("image")
                 .attr("class", "image1")
-                .attr("href", function(d) {return "track_pngs/" + d})
+                .attr("href", function(d) {return "./track_pngs/" + d})
                 .attr("x", 0)
                 .attr("y", 120)
                 .attr("width", 200)
@@ -661,7 +661,7 @@ function updateLineChart()
                 .transition()
                 .duration(1000)
                 .attr("class", "image1")
-                .attr("href", function(d) {return "track_pngs/" + d})
+                .attr("href", function(d) {return "./track_pngs/" + d})
                 .attrTween("x", function() {
                     let origin = 350
                     return function(t) {

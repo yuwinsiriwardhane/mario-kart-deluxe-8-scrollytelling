@@ -129,7 +129,7 @@ const ysiriwaInitiateScales = () => {
 const ysiriwarImportDataset = () => {
     switch (ysiriwarSelectedType) {
         case "characters":
-            d3.csv("/data/MK8_Character_Stats.csv").then(data => {
+            d3.csv("./data/MK8_Character_Stats.csv").then(data => {
                 console.log("characterDataset => ", data);
                 ysiriwarCharacterDataset = wrangleCharacterDataset(data);
                 populateCharacterImages();
@@ -137,21 +137,21 @@ const ysiriwarImportDataset = () => {
             break;
 
         case "karts":
-            d3.csv("/data/MK8_Kart_Stats.csv").then(data => {
+            d3.csv("./data/MK8_Kart_Stats.csv").then(data => {
                 console.log("kartDataset => ", data);
                 ysiriwarKartDataset = ysiriwarWrangleKartDataset(data);
                 ysiriwarPopulateKartImages();
             });
             break;
         case "tires":
-            d3.csv("/data/MK8_Tire_Stats.csv").then(data => {
+            d3.csv("./data/MK8_Tire_Stats.csv").then(data => {
                 console.log("tireDataset => ", data);
                 ysiriwarTireDataset = ysiriwarWrangleTireDataset(data);
                 ysiriwarPopulateTireImages();
             });
             break;
         case "gliders":
-            d3.csv("/data/MK8_Gliders_Stats.csv").then(data => {
+            d3.csv("./data/MK8_Gliders_Stats.csv").then(data => {
                 console.log("gliderDataset => ", data);
                 ysiriwarGliderDataset = ysiriwarWrangleGliderDataset(data);
                 ysiriwarPopulateGliderImages();

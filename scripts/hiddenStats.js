@@ -108,7 +108,7 @@ function drawRadar(data) {
       .attr("cy", d => d[1])
   );
 
-  d3.select("#charCardImg").attr("src", `images/characterIcons/${data.Driver}.png`);
+  d3.select("#charCardImg").attr("src", `./images/characterIcons/${data.Driver}.png`);
   d3.select("#charCardName").text(data.Driver);
 }
 
@@ -145,7 +145,7 @@ function createCharacterGrid(data) {
           });
 
         td.append("img")
-          .attr("src", `images/characterIcons/${data[index].Driver}.png`)
+          .attr("src", `./images/characterIcons/${data[index].Driver}.png`)
           .attr("alt", data[index].Driver)
           //max size also ensures consistency
           .style("max-width", "100px")
